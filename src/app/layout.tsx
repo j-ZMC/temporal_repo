@@ -5,7 +5,7 @@ import "@fontsource/opendyslexic/700.css";
 import "./globals.css";
 import { SiteNav } from "@/components/site-nav";
 
-// Diseñada por el Braille Institute para máxima legibilidad.
+// Designed by the Braille Institute for maximum legibility.
 const atkinson = Atkinson_Hyperlegible_Next({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -18,18 +18,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Constela · by Astralis",
-  description: "Búsqueda de empleo paso a paso para personas neurodivergentes",
+  description: "A step-by-step job search for neurodivergent people",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="es"
+      lang="en"
       className={`${atkinson.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
-        {/* Aplica los ajustes de lectura guardados antes de pintar (ver accessibility-panel.tsx) */}
+        {/* Applies saved reading settings before first paint (see accessibility-panel.tsx) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var p=JSON.parse(localStorage.getItem("a11y")||"{}");for(var k in p)if(p[k])document.documentElement.classList.add(k)}catch(e){}})()`,

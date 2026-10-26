@@ -7,10 +7,10 @@ import { AccessibilityPanel } from "@/components/accessibility-panel";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/perfil", label: "Perfil", icon: UserRound },
-  { href: "/plan", label: "Mi plan", icon: ListChecks },
-  { href: "/vacantes", label: "Vacantes", icon: BriefcaseBusiness },
-  { href: "/entrevista", label: "Entrevista", icon: MessagesSquare },
+  { href: "/profile", label: "Profile", icon: UserRound },
+  { href: "/plan", label: "My plan", icon: ListChecks },
+  { href: "/jobs", label: "Jobs", icon: BriefcaseBusiness },
+  { href: "/interview", label: "Interview", icon: MessagesSquare },
 ];
 
 export function SiteNav() {
@@ -42,15 +42,15 @@ export function SiteNav() {
             <Star className="size-5 fill-star text-star" aria-hidden />
             Constela
           </Link>
-          <nav aria-label="Principal" className="hidden gap-1 md:flex">
+          <nav aria-label="Main" className="hidden gap-1 md:flex">
             {items}
           </nav>
           <AccessibilityPanel />
         </div>
       </header>
-      {/* En celular la navegación va abajo, al alcance del pulgar */}
+      {/* On phones the nav sits at the bottom, within thumb reach */}
       <nav
-        aria-label="Principal"
+        aria-label="Main"
         className="fixed inset-x-0 bottom-0 z-10 flex border-t bg-background px-2 pb-[env(safe-area-inset-bottom)] md:hidden"
       >
         {items}

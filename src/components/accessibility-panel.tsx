@@ -14,12 +14,12 @@ import {
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
-// Cada opción es una clase en <html>; layout.tsx la aplica antes de pintar para evitar parpadeos.
+// Each option is a class on <html>; layout.tsx applies it before first paint to avoid a flash.
 const options = [
-  { key: "dyslexic", label: "Fuente para dislexia", hint: "Usa OpenDyslexic en toda la app" },
-  { key: "text-large", label: "Letra más grande", hint: "Aumenta el tamaño del texto" },
-  { key: "calm", label: "Modo calma", hint: "Colores más suaves y menos contraste visual" },
-  { key: "reduce-motion", label: "Reducir animaciones", hint: "Quita movimientos y transiciones" },
+  { key: "dyslexic", label: "Dyslexia-friendly font", hint: "Use OpenDyslexic across the app" },
+  { key: "text-large", label: "Larger text", hint: "Increase the text size" },
+  { key: "calm", label: "Calm mode", hint: "Softer colors and less visual contrast" },
+  { key: "reduce-motion", label: "Reduce motion", hint: "Remove movement and transitions" },
 ] as const;
 
 type Key = (typeof options)[number]["key"];
@@ -30,7 +30,7 @@ const PREFS_KEY = "a11y";
 export function AccessibilityPanel() {
   const [prefs, setPrefs] = useState<Prefs>({});
 
-  // Al abrir, lee lo que el script de layout.tsx ya aplicó en <html>.
+  // On open, read what the layout.tsx script already applied to <html>.
   function syncFromHtml(open: boolean) {
     if (!open) return;
     const html = document.documentElement.classList;
@@ -44,7 +44,7 @@ export function AccessibilityPanel() {
     try {
       localStorage.setItem(PREFS_KEY, JSON.stringify(next));
     } catch {
-      // Sin localStorage (modo privado) la opción sigue funcionando en esta visita.
+      // Without localStorage (private mode) the option still works for this visit.
     }
   }
 
@@ -52,12 +52,12 @@ export function AccessibilityPanel() {
     <Dialog onOpenChange={syncFromHtml}>
       <DialogTrigger render={<Button variant="outline" size="sm" />}>
         <Settings2 aria-hidden />
-        Lectura
+        Reading
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Ajustes de lectura</DialogTitle>
-          <DialogDescription>Elige lo que te haga sentir más cómodo. Se guarda en este dispositivo.</DialogDescription>
+          <DialogTitle>Reading settings</DialogTitle>
+          <DialogDescription>Choose what feels most comfortable. Saved on this device.</DialogDescription>
         </DialogHeader>
         <ul className="flex flex-col gap-4">
           {options.map(({ key, label, hint }) => (

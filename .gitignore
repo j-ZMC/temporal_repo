@@ -41,5 +41,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# binario de impeccable (cada quien lo instala con: npx impeccable install)
+# impeccable binary (each teammate installs it with: npx impeccable install)
 .claude/skills/impeccable/scripts/bin/

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Atkinson_Hyperlegible_Next, Geist_Mono } from "next/font/google";
 import "@fontsource/opendyslexic/400.css";
 import "@fontsource/opendyslexic/700.css";
 import "./globals.css";
 import { SiteNav } from "@/components/site-nav";
 
-const geistSans = Geist({
+// Diseñada por el Braille Institute para máxima legibilidad.
+const atkinson = Atkinson_Hyperlegible_Next({
   variable: "--font-sans",
   subsets: ["latin"],
 });
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Copiloto de empleo",
+  title: "Constela · by Astralis",
   description: "Búsqueda de empleo paso a paso para personas neurodivergentes",
 };
 
@@ -24,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${atkinson.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

@@ -6,6 +6,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-star: var(--star);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
@@ -48,25 +49,28 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Paleta Astralis: crema cálido, azul noche y dorado de estrella (solo para logros, nunca para texto) */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: oklch(0.982 0.008 85);
+  --foreground: oklch(0.26 0.045 262);
+  --card: oklch(0.993 0.005 85);
+  --card-foreground: oklch(0.26 0.045 262);
+  --popover: oklch(0.993 0.005 85);
+  --popover-foreground: oklch(0.26 0.045 262);
+  --primary: oklch(0.34 0.075 262);
+  --primary-foreground: oklch(0.982 0.008 85);
+  --secondary: oklch(0.945 0.014 85);
+  --secondary-foreground: oklch(0.26 0.045 262);
+  --muted: oklch(0.945 0.014 85);
+  --muted-foreground: oklch(0.47 0.03 262);
+  --accent: oklch(0.945 0.014 85);
+  --accent-foreground: oklch(0.26 0.045 262);
+  /* Terracota en vez de rojo alarma */
+  --destructive: oklch(0.52 0.12 35);
+  --border: oklch(0.9 0.015 85);
+  --input: oklch(0.9 0.015 85);
+  --ring: oklch(0.55 0.08 262);
+  --star: oklch(0.8 0.13 85);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -136,14 +140,16 @@
   }
 }
 
+/* Aún más suave que la paleta base: menos contraste y color apagado */
 .calm {
-  --background: oklch(0.975 0.008 85);
-  --foreground: oklch(0.3 0.01 85);
-  --card: oklch(0.985 0.006 85);
-  --primary: oklch(0.45 0.04 220);
-  --secondary: oklch(0.94 0.01 85);
-  --muted-foreground: oklch(0.5 0.01 85);
-  --border: oklch(0.9 0.01 85);
+  --background: oklch(0.96 0.006 85);
+  --foreground: oklch(0.33 0.02 262);
+  --card: oklch(0.97 0.005 85);
+  --primary: oklch(0.44 0.035 245);
+  --secondary: oklch(0.93 0.008 85);
+  --muted-foreground: oklch(0.48 0.015 262);
+  --border: oklch(0.89 0.008 85);
+  --star: oklch(0.78 0.06 85);
 }
 
 .reduce-motion *,

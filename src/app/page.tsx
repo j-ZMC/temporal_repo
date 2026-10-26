@@ -1,14 +1,21 @@
 import Link from "next/link";
+import { Sparkle } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center gap-6 px-4 py-16">
-      <h1 className="text-3xl font-semibold">Buscar trabajo, un paso a la vez</h1>
+      <p className="text-sm font-semibold tracking-wide text-muted-foreground">Constela · by Astralis</p>
+      <h1 className="text-4xl font-bold text-balance">Buscar trabajo, un paso a la vez</h1>
       <p className="text-lg text-muted-foreground">
-        Te ayudamos a organizar tu búsqueda de empleo en pasos pequeños, a tu ritmo.
+        Cada paso es una estrella. Juntos forman tu camino hacia el empleo, a tu ritmo.
       </p>
-      <Link href="/perfil" className={buttonVariants({ className: "w-fit" })}>
+      <div aria-hidden className="flex gap-3">
+        <Sparkle className="size-5 fill-star text-star" />
+        <Sparkle className="size-5 fill-star text-star" />
+        <Sparkle className="size-5 text-border" />
+      </div>
+      <Link href="/perfil" className={buttonVariants({ size: "lg", className: "w-fit" })}>
         Empezar
       </Link>
     </main>

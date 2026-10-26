@@ -1,14 +1,16 @@
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-xl flex-1 flex-col justify-center gap-6 px-4 py-16">
-      <h1 className="text-3xl font-semibold">Copiloto de empleo</h1>
-      <p className="text-muted-foreground">
-        Proyecto listo. Aquí irá el perfil, Mi plan, vacantes y entrevistas.
+    <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center gap-6 px-4 py-16">
+      <h1 className="text-3xl font-semibold">Buscar trabajo, un paso a la vez</h1>
+      <p className="text-lg text-muted-foreground">
+        Te ayudamos a organizar tu búsqueda de empleo en pasos pequeños, a tu ritmo.
       </p>
-      <p className="dyslexic text-lg">Así se ve el texto en modo OpenDyslexic.</p>
-      <Button className="w-fit">Empezar</Button>
+      <Link href="/perfil" className={buttonVariants({ className: "w-fit" })}>
+        Empezar
+      </Link>
     </main>
   );
 }

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@fontsource/opendyslexic/400.css";
 import "@fontsource/opendyslexic/700.css";
 import "./globals.css";
+import { SiteNav } from "@/components/site-nav";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -24,8 +25,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        {/* Aplica los ajustes de lectura guardados antes de pintar (ver accessibility-panel.tsx) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var p=JSON.parse(localStorage.getItem("a11y")||"{}");for(var k in p)if(p[k])document.documentElement.classList.add(k)}catch(e){}})()`,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col">
+        <SiteNav />
+        <div className="flex flex-1 flex-col pb-20 md:pb-0">{children}</div>
+      </body>
     </html>
   );
 }

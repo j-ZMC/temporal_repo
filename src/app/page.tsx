@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sparkle } from "lucide-react";
+import { Star } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
@@ -11,9 +11,9 @@ export default function Home() {
         Cada paso es una estrella. Juntos forman tu camino hacia el empleo, a tu ritmo.
       </p>
       <div aria-hidden className="flex gap-3">
-        <Sparkle className="size-5 fill-star text-star" />
-        <Sparkle className="size-5 fill-star text-star" />
-        <Sparkle className="size-5 text-border" />
+        <Star className="size-5 fill-star text-star" />
+        <Star className="size-5 fill-star text-star" />
+        <Star className="size-5 text-border" />
       </div>
       <Link href="/perfil" className={buttonVariants({ size: "lg", className: "w-fit" })}>
         Empezar

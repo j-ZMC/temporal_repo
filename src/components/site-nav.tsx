@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BriefcaseBusiness, ListChecks, MessagesSquare, Sparkle, UserRound } from "lucide-react";
+import { BriefcaseBusiness, ListChecks, MessagesSquare, Star, UserRound } from "lucide-react";
 import { AccessibilityPanel } from "@/components/accessibility-panel";
 import { cn } from "@/lib/utils";
 
@@ -39,7 +39,7 @@ export function SiteNav() {
       <header className="sticky top-0 z-10 border-b bg-background">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
           <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-            <Sparkle className="size-5 fill-star text-star" aria-hidden />
+            <Star className="size-5 fill-star text-star" aria-hidden />
             Constela
           </Link>
           <nav aria-label="Principal" className="hidden gap-1 md:flex">

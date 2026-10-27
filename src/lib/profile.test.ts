@@ -4,9 +4,25 @@ import {
   QUESTIONS,
   describeAdaptations,
   loadProfile,
+  loadStep,
   saveProfile,
+  saveStep,
   toAdaptations,
+  toggleOption,
 } from "@/lib/profile";
+
+describe("toggleOption", () => {
+  it("adds and removes a value", () => {
+    expect(toggleOption(["noise"], "crowds")).toEqual(["noise", "crowds"]);
+    expect(toggleOption(["noise", "crowds"], "noise")).toEqual(["crowds"]);
+  });
+
+  it("makes 'none' and 'not-sure' exclusive", () => {
+    expect(toggleOption(["noise", "crowds"], "none")).toEqual(["none"]);
+    expect(toggleOption(["none"], "noise")).toEqual(["noise"]);
+    expect(toggleOption(["remote"], "not-sure")).toEqual(["not-sure"]);
+  });
+});
 
 describe("toAdaptations", () => {
   it("returns the defaults for an empty profile", () => {
@@ -146,6 +162,16 @@ describe("loadProfile / saveProfile", () => {
       answers: { reading: "shout", sensory: ["noise", "lasers"], workplace: "remote" },
     });
     expect(loadProfile()).toEqual({ sensory: ["noise"] });
+  });
+
+  it("round-trips the current step and rejects bad values", () => {
+    expect(loadStep()).toBe(-1);
+    saveStep(3);
+    expect(loadStep()).toBe(3);
+    store["profile-step"] = "42";
+    expect(loadStep()).toBe(-1);
+    store["profile-step"] = "abc";
+    expect(loadStep()).toBe(-1);
   });
 
   it("does not throw when storage is unavailable", () => {

@@ -57,13 +57,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-profile.md](../SPEC-profile.md)
 **Description:** Replace the `/profile` placeholder with the flow: a welcome screen (why we ask, "About 3 minutes", Start / Skip for now) and one screen per question with Back, Skip and Next, star progress plus "3 of 8" text, single and multi-select inputs. Each answer is saved immediately.
 
 **Acceptance criteria:**
-- [ ] All 8 questions can be answered, skipped or revisited with Back
-- [ ] Reloading mid-form resumes on the same question with answers kept
-- [ ] Tap targets are at least 44 px; fully usable with keyboard only
+- [x] All 8 questions can be answered, skipped or revisited with Back
+- [x] Reloading mid-form resumes on the same question with answers kept
+- [x] Tap targets are at least 44 px; fully usable with keyboard only
 
 **Verification:**
-- [ ] Types and lint pass
-- [ ] Manual check: complete the flow at 375 px and desktop; reload halfway; keyboard only
+- [x] Types and lint pass
+- [x] Manual check: complete the flow at 375 px and desktop; reload halfway; keyboard only
 
 **Dependencies:** Task 2
 

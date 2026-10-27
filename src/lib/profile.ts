@@ -165,8 +165,37 @@ export function describeAdaptations(a: Adaptations): string[] {
   return lines.length > 0 ? lines.slice(0, 4) : ["We'll use the standard settings. You can change them anytime."];
 }
 
+// Multi-select toggle where "none" / "not-sure" can't be combined with real answers.
+const EXCLUSIVE = ["none", "not-sure"];
+export function toggleOption(current: readonly string[], value: string): string[] {
+  if (current.includes(value)) return current.filter((v) => v !== value);
+  if (EXCLUSIVE.includes(value)) return [value];
+  return [...current.filter((v) => !EXCLUSIVE.includes(v)), value];
+}
+
 const STORAGE_KEY = "profile";
+const STEP_KEY = "profile-step";
 const VERSION = 1;
+
+// Which screen the person was on, so a reload resumes there. -1 = welcome.
+export function loadStep(): number {
+  try {
+    const raw = localStorage.getItem(STEP_KEY);
+    if (raw === null) return -1;
+    const step = Number(raw);
+    return Number.isInteger(step) && step >= -1 && step <= QUESTIONS.length ? step : -1;
+  } catch {
+    return -1;
+  }
+}
+
+export function saveStep(step: number): void {
+  try {
+    localStorage.setItem(STEP_KEY, String(step));
+  } catch {
+    // Same as saveProfile: in-memory only.
+  }
+}
 
 // Storage can be edited by hand, so keep only answers that match a real option.
 function sanitize(raw: Record<string, unknown>): Answers {

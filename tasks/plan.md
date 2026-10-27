@@ -27,7 +27,7 @@ An 8-question onboarding at `/profile`, one question per screen, all optional, s
 - [ ] Teammates can read the `toAdaptations()` contract
 
 ### Phase 2: Core flow
-- [ ] Task 3: Welcome and question screens
+- [x] Task 3: Welcome and question screens
 - [ ] Task 4: Summary screen with edit and "how Constela will adapt"
 - [ ] Task 5: Hand-off to My plan
 

@@ -23,11 +23,11 @@ A daily, "important first" plan at `/plan`: one current step (or up to 3, from t
 ### Phase 1: The plan without AI
 - [x] Task 1: Plan model, storage, starter path and pure functions (with tests)
 - [x] Task 2: My plan screen: current step, next steps, done, constellation, "See what's next"
-- [ ] Task 3: Profile adaptations on My plan
+- [x] Task 3: Profile adaptations on My plan
 
 ### Checkpoint A: Usable plan without AI
-- [ ] Tests, lint, types and build pass
-- [ ] Starter path works end to end at 375 px and desktop, keyboard only, Reading settings on
+- [x] Tests, lint, types and build pass
+- [x] Starter path works end to end at 375 px and desktop, keyboard only, Reading settings on
 
 ### Phase 2: "Break it down for me"
 - [ ] Task 4: Breakdown logic and `/api/breakdown` route with Groq (with mock-model tests)

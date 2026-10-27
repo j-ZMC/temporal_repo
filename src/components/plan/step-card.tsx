@@ -30,8 +30,27 @@ const ICONS: Record<StepIcon, LucideIcon> = {
 const action = "h-11 px-5 text-base";
 
 // The one thing to do now: icon, verb-first title, duration, and its actions.
-export function CurrentStep({ step, focus, onDone }: { step: PlanStep; focus: boolean; onDone: () => void }) {
+export function CurrentStep({
+  step,
+  focus,
+  breakdownFirst,
+  prominentTime,
+  onDone,
+  onBreakdown,
+}: {
+  step: PlanStep;
+  focus: boolean;
+  breakdownFirst: boolean;
+  prominentTime: boolean;
+  onDone: () => void;
+  onBreakdown: () => void;
+}) {
   const Icon = ICONS[step.icon];
+  const breakdown = (
+    <Button variant={breakdownFirst ? "default" : "ghost"} className={action} onClick={onBreakdown}>
+      Break it down for me
+    </Button>
+  );
   const heading = useRef<HTMLHeadingElement>(null);
   // After Done, the button is gone; land keyboard and screen-reader users on the new step.
   useEffect(() => {
@@ -47,11 +66,15 @@ export function CurrentStep({ step, focus, onDone }: { step: PlanStep; focus: bo
           <h2 id={`step-${step.id}`} ref={heading} tabIndex={-1} className="text-xl font-semibold text-balance outline-none">
             {step.title}
           </h2>
-          <Duration minutes={step.minutes} />
+          <Duration
+            minutes={step.minutes}
+            className={prominentTime ? "w-fit rounded-md bg-secondary px-2 py-1 text-base font-medium text-foreground" : undefined}
+          />
         </div>
       </div>
       <div className="flex flex-wrap gap-3">
-        <Button className={action} onClick={onDone}>
+        {breakdownFirst && breakdown}
+        <Button variant={breakdownFirst ? "outline" : "default"} className={action} onClick={onDone}>
           Done
         </Button>
         {step.href && (
@@ -59,6 +82,7 @@ export function CurrentStep({ step, focus, onDone }: { step: PlanStep; focus: bo
             Open
           </Link>
         )}
+        {!breakdownFirst && breakdown}
       </div>
     </article>
   );
@@ -75,6 +99,25 @@ export function AllDone({ focus }: { focus: boolean }) {
         You finished every step
       </h2>
       <p className="text-muted-foreground">Every star is lit. You can add a new step anytime.</p>
+    </section>
+  );
+}
+
+// gentlePacing: a pause after each step instead of jumping straight to the next one.
+export function Pause({ onContinue }: { onContinue: () => void }) {
+  const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => heading.current?.focus(), []);
+  return (
+    <section className="flex flex-col gap-4 rounded-xl border bg-card p-6">
+      <div className="flex flex-col gap-2">
+        <h2 ref={heading} tabIndex={-1} className="text-xl font-semibold outline-none">
+          Nice work
+        </h2>
+        <p className="text-muted-foreground">Take a break if you need one. Your next step will be here.</p>
+      </div>
+      <Button className={`${action} w-fit`} onClick={onContinue}>
+        Keep going
+      </Button>
     </section>
   );
 }

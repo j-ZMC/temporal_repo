@@ -54,11 +54,11 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 **Description:** Wire `toAdaptations()` into the screen: `stepsAtOnce`, `importantFirst` (collapsed list shows only a count), `offerBreakdownFirst` (the break-down button becomes primary; it opens a placeholder until Task 5), `showDurations` (prominent durations), and `gentlePacing` ("Nice work. Take a break or keep going?" after Done).
 
 **Acceptance criteria:**
-- [ ] Each adaptation changes the screen as described in SPEC-plan.md
-- [ ] With no profile, the defaults apply and a link invites setting up the profile
+- [x] Each adaptation changes the screen as described in SPEC-plan.md
+- [x] With no profile, the defaults apply and a link invites setting up the profile
 
 **Verification:**
-- [ ] Manual check: try three different saved profiles and compare the screen
+- [x] Manual check: try three different saved profiles and compare the screen
 
 **Dependencies:** Task 2
 
@@ -69,8 +69,8 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 **Estimated scope:** S
 
 ## Checkpoint A: Usable plan without AI
-- [ ] `npm test`, `npm run lint`, `npx tsc --noEmit` and `npm run build` pass
-- [ ] Starter path works end to end at 375 px and desktop, keyboard only, with all four Reading settings on
+- [x] `npm test`, `npm run lint`, `npx tsc --noEmit` and `npm run build` pass
+- [x] Starter path works end to end at 375 px and desktop, keyboard only, with all four Reading settings on
 
 ## Phase 2: "Break it down for me"
 

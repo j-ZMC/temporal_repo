@@ -79,13 +79,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 **Description:** Install `@ai-sdk/groq`. Create `src/lib/breakdown.ts` (request and response Zod schemas, the Easy Read prompt, `breakdown(task, flags, model)` using `generateText` with `Output.object()` and a 15 s timeout) and `src/app/api/breakdown/route.ts` (validates the body, reads `GROQ_API_KEY` and `GROQ_MODEL`, returns typed errors). Add both env variables to `.env.example`. Pick the default model from Groq's structured-output docs.
 
 **Acceptance criteria:**
-- [ ] A valid request returns 3 to 6 steps of at most 10 minutes; anything else is rejected
-- [ ] Missing key returns `not_configured`; invalid input `invalid_input`; provider or schema failures `failed`; timeouts `timeout`
-- [ ] A test asserts the prompt contains only the task text and the two flags
+- [x] A valid request returns 3 to 6 steps of at most 10 minutes; anything else is rejected
+- [x] Missing key returns `not_configured`; invalid input `invalid_input`; provider or schema failures `failed`; timeouts `timeout`
+- [x] A test asserts the prompt contains only the task text and the two flags
 
 **Verification:**
-- [ ] Tests pass with `MockLanguageModelV4`: `npm test`
-- [ ] Build succeeds: `npm run build`
+- [x] Tests pass with `MockLanguageModelV4`: `npm test`
+- [x] Build succeeds: `npm run build`
 
 **Dependencies:** None (can run in parallel with Tasks 2 and 3)
 
@@ -120,7 +120,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 **Estimated scope:** M
 
 ## Checkpoint B: AI flow
-- [ ] Route tests pass with the mock model, including "no profile fields sent"
+- [x] Route tests pass with the mock model, including "no profile fields sent"
 - [ ] With a real Groq key, a break-down returns valid steps in under 10 s
 - [ ] With no key, the calm fallback shows and manual steps still work
 

@@ -30,11 +30,11 @@ A daily, "important first" plan at `/plan`: one current step (or up to 3, from t
 - [x] Starter path works end to end at 375 px and desktop, keyboard only, Reading settings on
 
 ### Phase 2: "Break it down for me"
-- [ ] Task 4: Breakdown logic and `/api/breakdown` route with Groq (with mock-model tests)
+- [x] Task 4: Breakdown logic and `/api/breakdown` route with Groq (with mock-model tests)
 - [ ] Task 5: Break-down review dialog and "Add a step", with the manual fallback
 
 ### Checkpoint B: AI flow
-- [ ] Route tests pass with the mock model, including "no profile fields sent"
+- [x] Route tests pass with the mock model, including "no profile fields sent"
 - [ ] With a real Groq key: a break-down returns valid steps in under 10 s
 - [ ] With no key: the calm fallback shows and manual steps still work
 

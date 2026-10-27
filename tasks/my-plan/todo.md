@@ -9,13 +9,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 **Description:** Create `src/lib/plan.ts` with the `PlanStep` and `Plan` types, the 6-step starter path, `loadPlan()` / `savePlan()` (key `plan`, versioned, validated), and the pure functions `visibleSteps`, `completeStep`, `addSteps`, `removeStep` and `addStepToPlan`. The profile step completes itself when a profile exists.
 
 **Acceptance criteria:**
-- [ ] With nothing saved, `loadPlan()` returns the starter path
-- [ ] `visibleSteps` returns 1 or 3 undone steps from `stepsAtOnce`, and 1 step of 5 minutes or less on low energy
-- [ ] Broken JSON, an unknown version or invalid steps in storage fall back safely without throwing
+- [x] With nothing saved, `loadPlan()` returns the starter path
+- [x] `visibleSteps` returns 1 or 3 undone steps from `stepsAtOnce`, and 1 step of 5 minutes or less on low energy
+- [x] Broken JSON, an unknown version or invalid steps in storage fall back safely without throwing
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Types pass: `npx tsc --noEmit`
+- [x] Tests pass: `npm test`
+- [x] Types pass: `npx tsc --noEmit`
 
 **Dependencies:** None
 

@@ -21,7 +21,7 @@ A daily, "important first" plan at `/plan`: one current step (or up to 3, from t
 ## Task List
 
 ### Phase 1: The plan without AI
-- [ ] Task 1: Plan model, storage, starter path and pure functions (with tests)
+- [x] Task 1: Plan model, storage, starter path and pure functions (with tests)
 - [ ] Task 2: My plan screen: current step, next steps, done, constellation, "See what's next"
 - [ ] Task 3: Profile adaptations on My plan
 

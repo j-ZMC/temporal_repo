@@ -30,13 +30,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 **Description:** Replace the `/plan` placeholder and the temporary profile note with the real screen: "Today" header, the current step card (icon, verb-first title, duration, Done, Open when linked), up to 2 next-step cards, a constellation of the path with done steps in star gold, and "See what's next (N)" collapsed. Generalize `Constellation` to N points and keep the Profile using it.
 
 **Acceptance criteria:**
-- [ ] Marking a step done lights its star and shows the next step; it survives a reload
-- [ ] "Open" goes to the linked module; "See what's next" lists the remaining steps with Remove
-- [ ] All targets at least 44 px; keyboard and screen-reader usable; no red or "overdue" anywhere
+- [x] Marking a step done lights its star and shows the next step; it survives a reload
+- [x] "Open" goes to the linked module; "See what's next" lists the remaining steps with Remove
+- [x] All targets at least 44 px; keyboard and screen-reader usable; no red or "overdue" anywhere
 
 **Verification:**
-- [ ] Tests, lint and types pass
-- [ ] Manual check: finish two starter steps at 375 px and desktop, reload, keyboard only
+- [x] Tests, lint and types pass
+- [x] Manual check: finish two starter steps at 375 px and desktop, reload, keyboard only
 
 **Dependencies:** Task 1
 
@@ -124,11 +124,11 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 - [ ] With a real Groq key, a break-down returns valid steps in under 10 s
 - [ ] With no key, the calm fallback shows and manual steps still work
 
-## Phase 3: Energy
+## Phase 3: Check-in
 
-## Task 6: Energy check-in
+## Task 6: Check-in (Low energy, Stressed, Okay, Good)
 
-**Description:** "How's your energy today?" with Low, Okay and Good at the top of My plan, asked once per day and skippable. Low shows one step of 5 minutes or less and "Small steps today. That still counts."; Okay and Good use the profile setting. Stored in the plan for today's date.
+**Description:** "How are you feeling today?" with Low energy, Stressed, Okay and Good at the top of My plan, asked once per day and skippable. Low energy shows one step of 5 minutes or less; Stressed shows the shortest step; both set gentleTone for the AI. Okay and Good use the profile setting. Stored in the plan for today's date.
 
 **Acceptance criteria:**
 - [ ] Choosing Low changes the visible steps immediately; a new day asks again

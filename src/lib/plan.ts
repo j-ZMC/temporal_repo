@@ -5,8 +5,13 @@ import type { Adaptations } from "@/lib/profile";
 export const STEP_ICONS = ["user", "briefcase", "bookmark", "building", "message", "calendar", "list"] as const;
 export type StepIcon = (typeof STEP_ICONS)[number];
 
-export const ENERGY_LEVELS = ["low", "okay", "good"] as const;
+// Self-reported check-in. It stays on the device; the AI only ever gets gentleTone(energy).
+export const ENERGY_LEVELS = ["low", "stressed", "okay", "good"] as const;
 export type Energy = (typeof ENERGY_LEVELS)[number];
+
+export function gentleTone(energy?: Energy): boolean {
+  return energy === "low" || energy === "stressed";
+}
 
 export type PlanStep = {
   id: string;
@@ -55,6 +60,11 @@ export function visibleSteps(plan: Plan, a: Adaptations, energy?: Energy): PlanS
   if (energy === "low") {
     const short = todo.find((s) => s.minutes <= SHORT_STEP) ?? todo[0];
     return short ? [short] : [];
+  }
+  if (energy === "stressed") {
+    // The easiest win first: the shortest step, earliest in the path on a tie.
+    const easiest = todo.reduce<PlanStep | undefined>((best, s) => (!best || s.minutes < best.minutes ? s : best), undefined);
+    return easiest ? [easiest] : [];
   }
   return todo.slice(0, a.stepsAtOnce);
 }

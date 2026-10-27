@@ -1,7 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { DEFAULT_ADAPTATIONS, type Adaptations } from "@/lib/profile";
 import {
+  ENERGY_LEVELS,
   STARTER_STEPS,
+  gentleTone,
   addStepToPlan,
   addSteps,
   completeStep,
@@ -53,6 +55,15 @@ describe("visibleSteps", () => {
   it("on low energy falls back to the next step when none is short", () => {
     const plan: Plan = { version: 1, steps: [{ ...starterPlan().steps[1], id: "long" }] };
     expect(visibleSteps(plan, DEFAULT_ADAPTATIONS, "low").map((s) => s.id)).toEqual(["long"]);
+  });
+
+  it("when stressed shows only the shortest step", () => {
+    const steps = visibleSteps(starterPlan(), DEFAULT_ADAPTATIONS, "stressed");
+    expect(steps.map((s) => s.id)).toEqual(["starter-save"]);
+  });
+
+  it("asks the AI for a gentle tone only after low energy or stress", () => {
+    expect([undefined, ...ENERGY_LEVELS].map(gentleTone)).toEqual([false, true, true, false, false]);
   });
 
   it("uses the profile setting for okay and good energy", () => {

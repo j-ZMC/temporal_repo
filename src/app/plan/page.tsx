@@ -1,14 +1,9 @@
-import { ProfileNote } from "@/components/plan/profile-note";
-import { SectionPlaceholder } from "@/components/section-placeholder";
+import { PlanView } from "@/components/plan/plan-view";
 
 export default function PlanPage() {
   return (
-    <SectionPlaceholder
-      title="My plan"
-      what="Your steps for today, matched to your energy. The “Break it down for me” button turns any big task into small steps."
-      owner="Luis"
-    >
-      <ProfileNote />
-    </SectionPlaceholder>
+    <main className="mx-auto flex w-full max-w-xl flex-col px-4 py-10">
+      <PlanView />
+    </main>
   );
 }

@@ -22,7 +22,7 @@ A daily, "important first" plan at `/plan`: one current step (or up to 3, from t
 
 ### Phase 1: The plan without AI
 - [x] Task 1: Plan model, storage, starter path and pure functions (with tests)
-- [ ] Task 2: My plan screen: current step, next steps, done, constellation, "See what's next"
+- [x] Task 2: My plan screen: current step, next steps, done, constellation, "See what's next"
 - [ ] Task 3: Profile adaptations on My plan
 
 ### Checkpoint A: Usable plan without AI
@@ -39,7 +39,7 @@ A daily, "important first" plan at `/plan`: one current step (or up to 3, from t
 - [ ] With no key: the calm fallback shows and manual steps still work
 
 ### Phase 3: Energy
-- [ ] Task 6: Energy check-in
+- [ ] Task 6: Check-in (four self-reported states)
 
 ### Checkpoint: Complete
 - [ ] Every success criterion in SPEC-plan.md is met

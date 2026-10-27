@@ -27,9 +27,9 @@ Kairos told us their users get distracted by unimportant tasks, and that visuals
 1. Same stack and storage approach as the Profile: client-only state in `localStorage`, rendered after hydration (`useHydrated()`), no accounts.
 2. The AI call runs in a Next.js route handler (`src/app/api/breakdown/route.ts`) so the API key never reaches the browser.
 3. AI output goes through `generateText` with `Output.object()` and a Zod schema (AI SDK 7), and is validated before use.
-4. Only the task text and two non-sensitive flags (`explicitSteps`, `summaryMode`) are sent to the AI provider. Never the support level, sensory needs or any other profile answer.
+4. Only the task text and three non-sensitive flags (`explicitSteps`, `summaryMode`, `gentleTone`) are sent to the AI provider. Never the support level, sensory needs, the check-in feeling or any other profile answer.
 5. The provider is not decided yet (see Open Questions). The route reads the provider from an env variable so switching is a config change.
-6. Energy check-in is part of this spec but built last, so it can be cut if time runs out.
+6. The check-in (four self-reported states) is part of this spec but built last, so it can be cut if time runs out.
 7. UI text in English, plain language (Easy Read): short sentences, one idea each, verb first in every step.
 
 ## The starter path
@@ -62,15 +62,18 @@ The person can add their own steps and remove starter steps. Copy may change aft
 
 Durations are always visible in a quiet style; `showDurations` makes them prominent.
 
-## Energy check-in (built last)
+## Check-in (built last)
 
-At the top of My plan: "How's your energy today?" with three choices: Low · Okay · Good. One tap, skippable, asked once per day.
+At the top of My plan: "How are you feeling today?" with four choices: Low energy · Stressed · Okay · Good. One tap, skippable, asked once per day. The person tells us; the app never guesses feelings from what they write.
 
-| Energy | Effect |
-| --- | --- |
-| Low | Show 1 step, prefer steps of 5 minutes or less; message "Small steps today. That still counts." |
-| Okay | Use the profile setting |
-| Good | Use the profile setting |
+| Check-in | Effect | Sent to the AI |
+| --- | --- | --- |
+| Low energy | Show 1 step, prefer steps of 5 minutes or less; "Small steps today. That still counts." | `gentleTone: true` |
+| Stressed | Show 1 step, the shortest one first; "One thing at a time. You've got this." | `gentleTone: true` |
+| Okay | Use the profile setting | `gentleTone: false` |
+| Good | Use the profile setting | `gentleTone: false` |
+
+The check-in itself never leaves the device. The AI only receives `gentleTone`, which asks for a calmer tone and smaller steps; it never receives the feeling, its history or the date.
 
 ## Interface
 
@@ -92,9 +95,10 @@ No red, no "overdue", no streak counters, no timers that run on their own. Every
 
 Request (validated with Zod; anything else returns 400):
 ```json
-{ "task": "Prepare for my interview on Friday", "explicitSteps": true, "summaryMode": false }
+{ "task": "Prepare for my interview on Friday", "explicitSteps": true, "summaryMode": false, "gentleTone": false }
 ```
 - `task`: 1 to 200 characters, trimmed.
+- `gentleTone`: true after a Low energy or Stressed check-in; asks for a calmer tone and steps of 5 minutes or less.
 
 Response:
 ```json
@@ -123,7 +127,7 @@ type PlanStep = {
   source: "starter" | "user" | "ai";
 };
 
-type Plan = { version: 1; steps: PlanStep[]; energy?: { level: "low" | "okay" | "good"; date: string } };
+type Plan = { version: 1; steps: PlanStep[]; energy?: { level: "low" | "stressed" | "okay" | "good"; date: string } };
 ```
 
 Stored in `localStorage` under `plan`, validated on load like the profile (unknown version or broken JSON means "start from the starter path").
@@ -184,7 +188,7 @@ export function visibleSteps(plan: Plan, a: Adaptations, energy?: Energy): PlanS
 
 - **Always:** validate the request and the AI response with Zod; keep the API key server-side; show a manual fallback when the AI fails; ask before adding AI steps; follow Easy Read copy rules; run tests, lint and types before committing.
 - **Ask first:** adding the provider package; changing what is sent to the AI; adding a step to the starter path; anything that stores data on a server.
-- **Never:** send the support level, sensory needs or other profile answers to the AI; show red, "overdue" or streak pressure; let the AI add steps without confirmation; commit an API key.
+- **Never:** send the support level, sensory needs, the check-in feeling or other profile answers to the AI; infer feelings from what the person writes; show red, "overdue" or streak pressure; let the AI add steps without confirmation; commit an API key.
 
 ## Success Criteria
 
@@ -193,13 +197,13 @@ export function visibleSteps(plan: Plan, a: Adaptations, energy?: Energy): PlanS
 - [ ] Marking a step done lights a star and shows the next step; the state survives a reload.
 - [ ] "Break it down for me" returns 3 to 6 steps of 10 minutes or less in under 10 seconds with a working key, and the person reviews them before they are added.
 - [ ] With no key, a timeout or a bad response, the person sees the calm fallback and can add steps manually; nothing they typed is lost.
-- [ ] Only the task text and two flags leave the device (checked in the route test).
+- [ ] Only the task text and three flags leave the device (checked in the route test); the check-in feeling never does.
 - [ ] Works at 375 px and desktop, keyboard only, and with all four Reading settings on.
-- [ ] Energy check-in works as described, or is explicitly cut and noted here.
+- [ ] The check-in works as described for all four states, or is explicitly cut and noted here.
 
 ## Open Questions
 
 1. **AI provider:** Groq (fast, generous free tier; recommended for the demo), Gemini, or Zahid's OpenAI key? This decides the one package to install.
 2. Is the starter path right? Kairos might want different first steps.
-3. Keep the energy check-in in this iteration, or cut it for time?
-4. Should people be able to reorder steps, or is "most important first" decided by the app only?
+3. ~~Keep the energy check-in?~~ Decided: kept, expanded to four self-reported states with a `gentleTone` flag for the AI.
+4. ~~Reordering?~~ Defaulted for this iteration: the app keeps "most important first"; people can remove steps.

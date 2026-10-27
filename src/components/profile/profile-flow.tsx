@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useSyncExternalStore } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import { ProfileSummary } from "@/components/profile/profile-summary";
 import { QuestionStep } from "@/components/profile/question-step";
 import { QUESTIONS, type Answers, loadProfile, loadStep, saveProfile, saveStep } from "@/lib/profile";
 
@@ -20,6 +20,7 @@ function Flow() {
   const router = useRouter();
   const [answers, setAnswers] = useState<Answers>(() => loadProfile() ?? {});
   const [step, setStep] = useState(loadStep);
+  const [editing, setEditing] = useState(false);
 
   function go(next: number) {
     setStep(next);
@@ -54,22 +55,24 @@ function Flow() {
   }
 
   if (step >= QUESTIONS.length) {
-    // shortcut: temporary end screen, replaced by the summary in Task 4.
     return (
-      <section className="flex flex-col gap-6">
-        <h1 className="text-3xl font-bold">You&apos;re all set</h1>
-        <p className="text-lg text-muted-foreground">Your answers are saved on this device.</p>
-        <div className="flex flex-wrap gap-3">
-          <Link href="/plan" className={buttonVariants({ size: "lg" })}>
-            Go to my plan
-          </Link>
-          <Button size="lg" variant="outline" onClick={() => go(0)}>
-            Review answers
-          </Button>
-        </div>
-      </section>
+      <ProfileSummary
+        answers={answers}
+        onEdit={(i) => {
+          setEditing(true);
+          go(i);
+        }}
+      />
     );
   }
+
+  // While editing from the summary, every exit goes straight back to it.
+  const after = (next: number) => {
+    if (editing) {
+      setEditing(false);
+      go(QUESTIONS.length);
+    } else go(next);
+  };
 
   const q = QUESTIONS[step];
   return (
@@ -78,12 +81,12 @@ function Flow() {
       index={step}
       value={answers[q.id]}
       onChange={(v) => setAnswer(q.id, v)}
-      onBack={() => go(step - 1)}
+      onBack={() => after(step - 1)}
       onSkip={() => {
         setAnswer(q.id, undefined);
-        go(step + 1);
+        after(step + 1);
       }}
-      onNext={() => go(step + 1)}
+      onNext={() => after(step + 1)}
     />
   );
 }

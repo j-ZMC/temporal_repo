@@ -28,7 +28,7 @@ An 8-question onboarding at `/profile`, one question per screen, all optional, s
 
 ### Phase 2: Core flow
 - [x] Task 3: Welcome and question screens
-- [ ] Task 4: Summary screen with edit and "how Constela will adapt"
+- [x] Task 4: Summary screen with edit and "how Constela will adapt"
 - [ ] Task 5: Hand-off to My plan
 
 ### Checkpoint: Complete

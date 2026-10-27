@@ -80,13 +80,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-profile.md](../SPEC-profile.md)
 **Description:** After the last question (or Skip), show every answer in plain words with Edit, plus 2 to 4 lines from `describeAdaptations()`. If long texts feel really hard, suggest turning on the dyslexia-friendly font and larger text from the Reading panel.
 
 **Acceptance criteria:**
-- [ ] Each answer has an Edit action that jumps to its question and returns to the summary
-- [ ] Skipped questions read "Skipped" with an option to answer
-- [ ] The adaptation lines match `describeAdaptations()` for the saved profile
+- [x] Each answer has an Edit action that jumps to its question and returns to the summary
+- [x] Skipped questions read "Skipped" with an option to answer
+- [x] The adaptation lines match `describeAdaptations()` for the saved profile
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Manual check: edit two answers and confirm the adaptation lines update
+- [x] Tests pass: `npm test`
+- [x] Manual check: edit two answers and confirm the adaptation lines update
 
 **Dependencies:** Task 3
 

@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { Star } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { GetStartedLink } from "@/components/get-started-link";
 
 export default function Home() {
   return (
@@ -15,9 +14,7 @@ export default function Home() {
         <Star className="size-5 fill-star text-star" />
         <Star className="size-5 text-border" />
       </div>
-      <Link href="/profile" className={buttonVariants({ size: "lg", className: "w-fit" })}>
-        Get started
-      </Link>
+      <GetStartedLink />
     </main>
   );
 }

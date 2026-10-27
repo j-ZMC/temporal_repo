@@ -101,13 +101,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-profile.md](../SPEC-profile.md)
 **Description:** "Save and continue" goes to `/plan`, and the My plan placeholder reads `toAdaptations()` to show one line such as "We'll show you 1 step at a time", proving the contract works end to end. Home's "Get started" goes to `/plan` when a profile already exists.
 
 **Acceptance criteria:**
-- [ ] Finishing the profile lands on `/plan` with the adaptation line visible
-- [ ] With no saved profile, `/plan` shows the defaults and a link to set up the profile
-- [ ] No hydration warnings in the console
+- [x] Finishing the profile lands on `/plan` with the adaptation line visible
+- [x] With no saved profile, `/plan` shows the defaults and a link to set up the profile
+- [x] No hydration warnings in the console
 
 **Verification:**
-- [ ] Build succeeds: `npm run build`
-- [ ] Manual check: finish the profile, reload `/plan`, clear storage and reload again
+- [x] Build succeeds: `npm run build`
+- [x] Manual check: finish the profile, reload `/plan`, clear storage and reload again
 
 **Dependencies:** Task 4
 
@@ -118,7 +118,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-profile.md](../SPEC-profile.md)
 **Estimated scope:** S
 
 ## Checkpoint: Complete
-- [ ] All success criteria in SPEC-profile.md are met
-- [ ] Checked at 375 px and desktop, keyboard only, and with all four Reading settings on
+- [x] All success criteria in SPEC-profile.md are met
+- [x] Checked at 375 px and desktop, keyboard only, and with all four Reading settings on
 - [ ] `/impeccable critique` run on the flow and material issues fixed
 - [ ] Review with the team

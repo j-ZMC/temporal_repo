@@ -1,19 +1,17 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ProfileSummary } from "@/components/profile/profile-summary";
 import { QuestionStep } from "@/components/profile/question-step";
 import { QUESTIONS, type Answers, loadProfile, loadStep, saveProfile, saveStep } from "@/lib/profile";
-
-const subscribe = () => () => {};
+import { useHydrated } from "@/lib/use-hydrated";
 
 // Saved answers live in localStorage, which the server can't see. Render the flow only after
 // hydration so its lazy state reads storage without a server/client mismatch.
 export function ProfileFlow() {
-  const hydrated = useSyncExternalStore(subscribe, () => true, () => false);
-  return hydrated ? <Flow /> : null;
+  return useHydrated() ? <Flow /> : null;
 }
 
 function Flow() {

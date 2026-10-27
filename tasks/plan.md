@@ -29,11 +29,11 @@ An 8-question onboarding at `/profile`, one question per screen, all optional, s
 ### Phase 2: Core flow
 - [x] Task 3: Welcome and question screens
 - [x] Task 4: Summary screen with edit and "how Constela will adapt"
-- [ ] Task 5: Hand-off to My plan
+- [x] Task 5: Hand-off to My plan
 
 ### Checkpoint: Complete
-- [ ] Every success criterion in the spec is met
-- [ ] Checked at 375 px and desktop, keyboard only, and with all four Reading settings on
+- [x] Every success criterion in the spec is met
+- [x] Checked at 375 px and desktop, keyboard only, and with all four Reading settings on
 - [ ] Review with the team before merging
 
 ## Risks and Mitigations

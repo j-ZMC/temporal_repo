@@ -19,11 +19,11 @@ An 8-question onboarding at `/profile`, one question per screen, all optional, s
 ## Task List
 
 ### Phase 1: Foundation
-- [ ] Task 1: Set up Vitest
-- [ ] Task 2: Profile model, storage and adaptations (with tests)
+- [x] Task 1: Set up Vitest
+- [x] Task 2: Profile model, storage and adaptations (with tests)
 
 ### Checkpoint: Foundation
-- [ ] `npm test`, lint, types and build pass
+- [x] `npm test`, lint, types and build pass
 - [ ] Teammates can read the `toAdaptations()` contract
 
 ### Phase 2: Core flow

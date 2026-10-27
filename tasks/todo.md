@@ -9,13 +9,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-profile.md](../SPEC-profile.md)
 **Description:** Add Vitest as the test runner so pure logic can be tested from the command line.
 
 **Acceptance criteria:**
-- [ ] `vitest` is a dev dependency and `npm test` runs `vitest run`
-- [ ] A minimal `vitest.config.mts` resolves the `@/` import alias
-- [ ] `npm test` exits cleanly (no tests yet is fine with `--passWithNoTests`)
+- [x] `vitest` is a dev dependency and `npm test` runs `vitest run`
+- [x] A minimal `vitest.config.mts` resolves the `@/` import alias
+- [x] `npm test` exits cleanly (no tests yet is fine with `--passWithNoTests`)
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Build succeeds: `npm run build`
+- [x] Tests pass: `npm test`
+- [x] Build succeeds: `npm run build`
 
 **Dependencies:** None
 
@@ -30,13 +30,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-profile.md](../SPEC-profile.md)
 **Description:** Define the 8 questions as data, the `Profile` and `Adaptations` types, `loadProfile()` / `saveProfile()` on `localStorage`, `toAdaptations()` and `describeAdaptations()` (the plain-language lines for the summary), all following the spec's adaptation table.
 
 **Acceptance criteria:**
-- [ ] Every row of the spec's "How the app adapts" table is implemented and covered by a test
-- [ ] An empty profile returns the defaults (3 steps, normal text, no filters)
-- [ ] Broken JSON or an unknown `version` in storage returns "no profile" without throwing
+- [x] Every row of the spec's "How the app adapts" table is implemented and covered by a test
+- [x] An empty profile returns the defaults (3 steps, normal text, no filters)
+- [x] Broken JSON or an unknown `version` in storage returns "no profile" without throwing
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Types pass: `npx tsc --noEmit`
+- [x] Tests pass: `npm test`
+- [x] Types pass: `npx tsc --noEmit`
 
 **Dependencies:** Task 1
 
@@ -47,7 +47,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-profile.md](../SPEC-profile.md)
 **Estimated scope:** S
 
 ## Checkpoint: Foundation
-- [ ] `npm test`, `npm run lint`, `npx tsc --noEmit` and `npm run build` pass
+- [x] `npm test`, `npm run lint`, `npx tsc --noEmit` and `npm run build` pass
 - [ ] Share the `toAdaptations()` contract with the team
 
 ## Phase 2: Core flow

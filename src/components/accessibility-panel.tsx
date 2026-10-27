@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { setReadingOption } from "@/lib/reading";
 
 // Each option is a class on <html>; layout.tsx applies it before first paint to avoid a flash.
 const options = [
@@ -25,8 +26,6 @@ const options = [
 type Key = (typeof options)[number]["key"];
 type Prefs = Partial<Record<Key, boolean>>;
 
-const PREFS_KEY = "a11y";
-
 export function AccessibilityPanel() {
   const [prefs, setPrefs] = useState<Prefs>({});
 
@@ -38,14 +37,8 @@ export function AccessibilityPanel() {
   }
 
   function toggle(key: Key, on: boolean) {
-    const next = { ...prefs, [key]: on };
-    setPrefs(next);
-    document.documentElement.classList.toggle(key, on);
-    try {
-      localStorage.setItem(PREFS_KEY, JSON.stringify(next));
-    } catch {
-      // Without localStorage (private mode) the option still works for this visit.
-    }
+    setPrefs({ ...prefs, [key]: on });
+    setReadingOption(key, on);
   }
 
   return (

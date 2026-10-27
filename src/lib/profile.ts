@@ -147,7 +147,8 @@ export function toAdaptations(a: Answers): Adaptations {
   };
 }
 
-// Plain-language lines for the summary screen, most useful first, at most 4.
+// Plain-language lines for the summary screen, most useful first. The summary shows the first few
+// up front and the rest on request, so no chosen adaptation is ever hidden.
 export function describeAdaptations(a: Adaptations): string[] {
   const lines = [
     a.stepsAtOnce === 1 && "We'll show you one step at a time.",
@@ -162,7 +163,7 @@ export function describeAdaptations(a: Adaptations): string[] {
     a.workplaceFilters.length > 0 && "Jobs are filtered to where you'd like to work.",
     a.gentlePacing && "We'll check in with you along the way.",
   ].filter((l): l is string => typeof l === "string");
-  return lines.length > 0 ? lines.slice(0, 4) : ["We'll use the standard settings. You can change them anytime."];
+  return lines.length > 0 ? lines : ["We'll use the standard settings. You can change them anytime."];
 }
 
 // Multi-select toggle where "none" / "not-sure" can't be combined with real answers.

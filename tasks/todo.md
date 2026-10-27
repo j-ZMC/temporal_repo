@@ -120,5 +120,5 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-profile.md](../SPEC-profile.md)
 ## Checkpoint: Complete
 - [x] All success criteria in SPEC-profile.md are met
 - [x] Checked at 375 px and desktop, keyboard only, and with all four Reading settings on
-- [ ] `/impeccable critique` run on the flow and material issues fixed
+- [x] `/impeccable critique` run on the flow and material issues fixed
 - [ ] Review with the team

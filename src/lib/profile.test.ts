@@ -101,7 +101,7 @@ describe("describeAdaptations", () => {
     expect(describeAdaptations(DEFAULT_ADAPTATIONS)).toHaveLength(1);
   });
 
-  it("never returns more than 4 lines", () => {
+  it("lists every chosen adaptation, most useful first", () => {
     const everything = toAdaptations({
       reading: "listen",
       longText: "hard",
@@ -113,8 +113,9 @@ describe("describeAdaptations", () => {
       support: "regular",
     });
     const lines = describeAdaptations(everything);
-    expect(lines.length).toBeGreaterThan(1);
-    expect(lines.length).toBeLessThanOrEqual(4);
+    expect(lines).toHaveLength(11);
+    expect(lines[0]).toBe("We'll show you one step at a time.");
+    expect(lines).toContain("Jobs are filtered to where you'd like to work.");
   });
 });
 

@@ -132,12 +132,15 @@
     @apply font-sans;
   }
   /* Reading settings: classes on <html> toggled by the "Reading" panel */
-  .dyslexic {
-    font-family: "OpenDyslexic", sans-serif;
-  }
   .text-large {
     font-size: 118.75%;
   }
+}
+
+/* Unlayered and on every element so font utilities like font-heading can't override it. */
+.dyslexic,
+.dyslexic * {
+  font-family: "OpenDyslexic", sans-serif;
 }
 
 /* Softer than the base palette: less contrast and muted color */

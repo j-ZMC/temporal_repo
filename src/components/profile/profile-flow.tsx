@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { Constellation } from "@/components/profile/constellation";
 import { ProfileSummary } from "@/components/profile/profile-summary";
 import { QuestionStep } from "@/components/profile/question-step";
 import { QUESTIONS, type Answers, loadProfile, loadStep, saveProfile, saveStep } from "@/lib/profile";
@@ -19,6 +20,7 @@ function Flow() {
   const [answers, setAnswers] = useState<Answers>(() => loadProfile() ?? {});
   const [step, setStep] = useState(loadStep);
   const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState<string | string[] | undefined>();
 
   function go(next: number) {
     setStep(next);
@@ -35,16 +37,17 @@ function Flow() {
   if (step === -1) {
     return (
       <section className="flex flex-col gap-6">
+        <Constellation lit={QUESTIONS.map(() => false)} label={`${QUESTIONS.length} short questions`} />
         <h1 className="text-3xl font-bold text-balance">Let&apos;s get to know you</h1>
         <p className="text-lg text-muted-foreground">
-          A few quick questions help Constela fit the way you work best. It takes about 3 minutes, and you can skip
-          any question or change your answers anytime.
+          {QUESTIONS.length} short questions help Constela fit the way you work best. Each answer lights up a star.
+          It takes about 3 minutes, and you can skip any question or change your answers anytime.
         </p>
         <div className="flex flex-wrap gap-3">
-          <Button size="lg" onClick={() => go(0)}>
+          <Button className="h-11 px-5 text-base" onClick={() => go(0)}>
             Start
           </Button>
-          <Button size="lg" variant="outline" onClick={() => router.push("/plan")}>
+          <Button className="h-11 px-5 text-base" variant="outline" onClick={() => router.push("/plan")}>
             Skip for now
           </Button>
         </div>
@@ -57,6 +60,7 @@ function Flow() {
       <ProfileSummary
         answers={answers}
         onEdit={(i) => {
+          setDraft(answers[QUESTIONS[i].id]);
           setEditing(true);
           go(i);
         }}
@@ -64,27 +68,47 @@ function Flow() {
     );
   }
 
-  // While editing from the summary, every exit goes straight back to it.
-  const after = (next: number) => {
-    if (editing) {
+  const q = QUESTIONS[step];
+  const answered = QUESTIONS.map((x) => answers[x.id] !== undefined);
+
+  if (editing) {
+    // Edits from the summary stay a draft until Save, so Cancel never changes anything.
+    const toSummary = () => {
       setEditing(false);
       go(QUESTIONS.length);
-    } else go(next);
-  };
+    };
+    return (
+      <QuestionStep
+        key={q.id}
+        index={step}
+        value={draft}
+        answered={answered}
+        editing
+        onChange={setDraft}
+        onBack={toSummary}
+        onSkip={toSummary}
+        onNext={() => {
+          setAnswer(q.id, draft?.length ? draft : undefined);
+          toSummary();
+        }}
+      />
+    );
+  }
 
-  const q = QUESTIONS[step];
   return (
     <QuestionStep
       key={q.id}
       index={step}
       value={answers[q.id]}
+      answered={answered}
+      editing={false}
       onChange={(v) => setAnswer(q.id, v)}
-      onBack={() => after(step - 1)}
+      onBack={() => go(step - 1)}
       onSkip={() => {
         setAnswer(q.id, undefined);
-        after(step + 1);
+        go(step + 1);
       }}
-      onNext={() => after(step + 1)}
+      onNext={() => go(step + 1)}
     />
   );
 }

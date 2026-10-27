@@ -38,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col">
         <SiteNav />
-        <div className="flex flex-1 flex-col pb-20 md:pb-0">{children}</div>
+        <div className="flex flex-1 flex-col pb-24 lg:pb-0">{children}</div>
       </body>
     </html>
   );

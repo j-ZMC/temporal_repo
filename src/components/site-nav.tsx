@@ -24,7 +24,7 @@ export function SiteNav() {
         href={href}
         aria-current={active ? "page" : undefined}
         className={cn(
-          "flex flex-1 flex-col items-center gap-1 whitespace-nowrap rounded-lg px-1 py-2 text-xs md:flex-none md:flex-row md:gap-2 md:px-3 md:text-sm",
+          "flex flex-1 flex-col items-center gap-1 whitespace-nowrap rounded-lg px-1 py-2 text-xs lg:flex-none lg:flex-row lg:gap-2 lg:px-3 lg:text-sm",
           active ? "bg-secondary font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"
         )}
       >
@@ -42,16 +42,16 @@ export function SiteNav() {
             <Star className="size-5 fill-star text-star" aria-hidden />
             Constela
           </Link>
-          <nav aria-label="Main" className="hidden gap-1 md:flex">
+          <nav aria-label="Main" className="hidden gap-1 lg:flex">
             {items}
           </nav>
           <AccessibilityPanel />
         </div>
       </header>
-      {/* On phones the nav sits at the bottom, within thumb reach */}
+      {/* On phones and tablets the nav sits at the bottom, within thumb reach; lg leaves room for large text */}
       <nav
         aria-label="Main"
-        className="fixed inset-x-0 bottom-0 z-10 flex border-t bg-background px-2 pb-[env(safe-area-inset-bottom)] md:hidden"
+        className="fixed inset-x-0 bottom-0 z-10 flex border-t bg-background px-2 pb-[env(safe-area-inset-bottom)] lg:hidden"
       >
         {items}
       </nav>

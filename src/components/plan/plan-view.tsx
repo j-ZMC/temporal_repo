@@ -8,6 +8,7 @@ import { AddStep } from "@/components/plan/add-step";
 import { BreakdownDialog } from "@/components/plan/breakdown-dialog";
 import { CheckInReply, EnergyCheckIn } from "@/components/plan/energy-check-in";
 import { AllDone, CurrentStep, Duration, NextStep, Pause } from "@/components/plan/step-card";
+import { StepDetails } from "@/components/plan/step-details";
 import {
   addSteps,
   checkInDue,
@@ -20,6 +21,7 @@ import {
   setEnergy,
   syncWithProfile,
   todayEnergy,
+  undoStep,
   visibleSteps,
   type Energy,
   type NewStep,
@@ -43,6 +45,7 @@ function View() {
   // stepId: break down an existing step (it is replaced); otherwise the typed task is broken down.
   const [request, setRequest] = useState<{ id: string; task: string; stepId?: string } | null>(null);
   const [checkedIn, setCheckedIn] = useState(false);
+  const [selected, setSelected] = useState<string | null>(null);
   const adaptations = toAdaptations(profile ?? {});
   const now = new Date();
   const energy = todayEnergy(plan, now);
@@ -59,6 +62,7 @@ function View() {
   const next = adaptations.importantFirst ? [] : upNext;
   const later = plan.steps.filter((s) => !s.done && s !== current && !next.includes(s));
   const done = plan.steps.filter((s) => s.done).length;
+  const selectedStep = plan.steps.find((s) => s.id === selected);
 
   function finish(id: string) {
     const updated = completeStep(plan, id, new Date());
@@ -99,7 +103,12 @@ function View() {
     <div className="flex flex-col gap-8">
       <header className="flex flex-col gap-3">
         <h1 className="text-3xl font-bold">Today</h1>
-        <Constellation lit={plan.steps.map((s) => s.done)} label={`${done} of ${plan.steps.length} steps done`} />
+        <Constellation
+          lit={plan.steps.map((s) => s.done)}
+          names={plan.steps.map((s) => s.title)}
+          label={`${done} of ${plan.steps.length} steps done`}
+          onSelect={(i) => setSelected(plan.steps[i].id)}
+        />
         <p className="text-muted-foreground">
           {done} of {plan.steps.length} steps done
         </p>
@@ -182,6 +191,27 @@ function View() {
         onAdd={addOne}
         onBreakdown={(task) => setRequest({ id: crypto.randomUUID(), task })}
       />
+
+      {selectedStep && (
+        <StepDetails
+          step={selectedStep}
+          onDone={() => {
+            setSelected(null);
+            finish(selectedStep.id);
+          }}
+          onUndo={() => {
+            setSelected(null);
+            update(undoStep(plan, selectedStep.id));
+            setAnnouncement(`Back on your plan: ${selectedStep.title}`);
+          }}
+          onRemove={() => {
+            setSelected(null);
+            update(removeStep(plan, selectedStep.id));
+            setAnnouncement(`Removed: ${selectedStep.title}`);
+          }}
+          onClose={() => setSelected(null)}
+        />
+      )}
 
       {request && (
         <BreakdownDialog

@@ -103,6 +103,14 @@ export function completeStep(plan: Plan, id: string, now: Date): Plan {
   };
 }
 
+// From a star's details: put a done step back on the path.
+export function undoStep(plan: Plan, id: string): Plan {
+  return {
+    ...plan,
+    steps: plan.steps.map((s) => (s.id === id ? { ...s, done: false, doneAt: undefined } : s)),
+  };
+}
+
 export function addSteps(plan: Plan, steps: NewStep[], source: PlanStep["source"], afterId?: string): Plan {
   const created: PlanStep[] = steps.map((s) => ({
     id: crypto.randomUUID(),

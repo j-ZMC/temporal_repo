@@ -12,6 +12,7 @@ import {
   resetCheckIn,
   setEnergy,
   todayEnergy,
+  undoStep,
   loadPlan,
   removeStep,
   savePlan,
@@ -224,5 +225,15 @@ describe("check-in", () => {
     const plan = resetCheckIn(setEnergy(starterPlan(), "stressed", morning));
     expect(checkInDue(plan, morning)).toBe(true);
     expect(plan.energy).toBeUndefined();
+  });
+});
+
+describe("undoStep", () => {
+  it("puts a done step back as the next one, without its done date", () => {
+    const id = STARTER_STEPS[1].id;
+    const done = completeStep(starterPlan(), id, new Date("2026-10-28T10:00:00Z"));
+    const undone = undoStep(done, id);
+    expect(undone.steps[1]).toMatchObject({ id, done: false, doneAt: undefined });
+    expect(visibleSteps(undone, one)[0].id).toBe(STARTER_STEPS[0].id);
   });
 });

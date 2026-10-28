@@ -49,28 +49,30 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Astralis palette: warm cream, night blue and star gold (achievements only, never for text) */
+/* Astralis palette (Regina): navy #243B53, mint #E7F0ED, white, peach #F2B880.
+   Peach marks achievements only, never text: it is 1.8:1 on white. */
 :root {
-  --background: oklch(0.982 0.008 85);
-  --foreground: oklch(0.26 0.045 262);
-  --card: oklch(0.993 0.005 85);
-  --card-foreground: oklch(0.26 0.045 262);
-  --popover: oklch(0.993 0.005 85);
-  --popover-foreground: oklch(0.26 0.045 262);
-  --primary: oklch(0.34 0.075 262);
-  --primary-foreground: oklch(0.982 0.008 85);
-  --secondary: oklch(0.945 0.014 85);
-  --secondary-foreground: oklch(0.26 0.045 262);
-  --muted: oklch(0.945 0.014 85);
-  --muted-foreground: oklch(0.47 0.03 262);
-  --accent: oklch(0.945 0.014 85);
-  --accent-foreground: oklch(0.26 0.045 262);
+  --background: #e7f0ed;
+  --foreground: #243b53;
+  --card: #ffffff;
+  --card-foreground: #243b53;
+  --popover: #ffffff;
+  --popover-foreground: #243b53;
+  --primary: #243b53;
+  --primary-foreground: #ffffff;
+  --secondary: #dde8e4;
+  --secondary-foreground: #243b53;
+  --muted: #dde8e4;
+  --muted-foreground: #52667a;
+  --accent: #dde8e4;
+  --accent-foreground: #243b53;
   /* Terracotta instead of alarm red */
   --destructive: oklch(0.52 0.12 35);
-  --border: oklch(0.9 0.015 85);
-  --input: oklch(0.9 0.015 85);
-  --ring: oklch(0.55 0.08 262);
-  --star: oklch(0.8 0.13 85);
+  --border: #d0ddd8;
+  /* Inputs need 3:1 against white to be visible as fields */
+  --input: #7f8f9c;
+  --ring: #4a6a8a;
+  --star: #f2b880;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -145,14 +147,14 @@
 
 /* Softer than the base palette: less contrast and muted color */
 .calm {
-  --background: oklch(0.96 0.006 85);
-  --foreground: oklch(0.33 0.02 262);
-  --card: oklch(0.97 0.005 85);
-  --primary: oklch(0.44 0.035 245);
-  --secondary: oklch(0.93 0.008 85);
-  --muted-foreground: oklch(0.48 0.015 262);
-  --border: oklch(0.89 0.008 85);
-  --star: oklch(0.78 0.06 85);
+  --background: #edf2f0;
+  --foreground: #3a4e63;
+  --card: #f8faf9;
+  --primary: #4a6178;
+  --secondary: #e2eae7;
+  --muted-foreground: #56697b;
+  --border: #d9e3df;
+  --star: #e8c4a0;
 }
 
 .reduce-motion *,

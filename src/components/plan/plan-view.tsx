@@ -4,8 +4,21 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Constellation } from "@/components/profile/constellation";
+import { AddStep } from "@/components/plan/add-step";
+import { BreakdownDialog } from "@/components/plan/breakdown-dialog";
 import { AllDone, CurrentStep, Duration, NextStep, Pause } from "@/components/plan/step-card";
-import { completeStep, loadPlan, removeStep, savePlan, syncWithProfile, visibleSteps, type Plan } from "@/lib/plan";
+import {
+  addSteps,
+  completeStep,
+  loadPlan,
+  removeStep,
+  savePlan,
+  syncWithProfile,
+  visibleSteps,
+  type NewStep,
+  type Plan,
+  type PlanStep,
+} from "@/lib/plan";
 import { loadProfile, toAdaptations } from "@/lib/profile";
 import { useHydrated } from "@/lib/use-hydrated";
 
@@ -19,8 +32,12 @@ function View() {
   const [plan, setPlan] = useState<Plan>(() => syncWithProfile(loadPlan(), profile !== null));
   const [announcement, setAnnouncement] = useState("");
   const [paused, setPaused] = useState(false);
-  const [breakdownNote, setBreakdownNote] = useState(false);
+  const [newTask, setNewTask] = useState("");
+  // stepId: break down an existing step (it is replaced); otherwise the typed task is broken down.
+  const [request, setRequest] = useState<{ id: string; task: string; stepId?: string } | null>(null);
   const adaptations = toAdaptations(profile ?? {});
+  // shortcut: gentleTone stays false until the check-in lands (My plan Task 6).
+  const flags = { explicitSteps: adaptations.explicitSteps, summaryMode: adaptations.summaryMode, gentleTone: false };
 
   function update(next: Plan) {
     setPlan(next);
@@ -37,10 +54,29 @@ function View() {
   function finish(id: string) {
     const updated = completeStep(plan, id, new Date());
     update(updated);
-    setBreakdownNote(false);
     const upcoming = visibleSteps(updated, adaptations)[0];
     setAnnouncement(upcoming ? `Step done. Next: ${upcoming.title}` : "Step done. You finished every step.");
     setPaused(adaptations.gentlePacing && upcoming !== undefined);
+  }
+
+  function addFromDialog(steps: NewStep[], source: PlanStep["source"]) {
+    const parent = plan.steps.find((s) => s.id === request?.stepId);
+    if (parent) {
+      // The small steps take the big step's place and keep its icon and link.
+      const inherited = steps.map((s) => ({ ...s, icon: parent.icon, href: parent.href }));
+      update(removeStep(addSteps(plan, inherited, source, parent.id), parent.id));
+    } else {
+      update(addSteps(plan, steps, source));
+      setNewTask("");
+    }
+    setRequest(null);
+    setAnnouncement(`Added ${steps.length} ${steps.length === 1 ? "step" : "steps"}.`);
+  }
+
+  function addOne(title: string) {
+    update(addSteps(plan, [{ title, minutes: 5 }], "user"));
+    setNewTask("");
+    setAnnouncement(`Added: ${title}`);
   }
 
   return (
@@ -69,23 +105,15 @@ function View() {
       {paused ? (
         <Pause onContinue={() => setPaused(false)} />
       ) : current ? (
-        <div className="flex flex-col gap-3">
-          <CurrentStep
+        <CurrentStep
             key={current.id}
             step={current}
             focus={announcement !== ""}
             breakdownFirst={adaptations.offerBreakdownFirst}
             prominentTime={adaptations.showDurations}
             onDone={() => finish(current.id)}
-            onBreakdown={() => setBreakdownNote(true)}
+            onBreakdown={() => setRequest({ id: crypto.randomUUID(), task: current.title, stepId: current.id })}
           />
-          {breakdownNote && (
-            // shortcut: placeholder until the break-down dialog lands (My plan Task 5).
-            <p role="status" className="text-sm text-muted-foreground">
-              Breaking steps down with AI is coming in the next update.
-            </p>
-          )}
-        </div>
       ) : (
         <AllDone focus={announcement !== ""} />
       )}
@@ -127,6 +155,23 @@ function View() {
             ))}
           </ul>
         </details>
+      )}
+
+      <AddStep
+        value={newTask}
+        onChange={setNewTask}
+        onAdd={addOne}
+        onBreakdown={(task) => setRequest({ id: crypto.randomUUID(), task })}
+      />
+
+      {request && (
+        <BreakdownDialog
+          key={request.id}
+          task={request.task}
+          flags={flags}
+          onAdd={addFromDialog}
+          onClose={() => setRequest(null)}
+        />
       )}
     </div>
   );

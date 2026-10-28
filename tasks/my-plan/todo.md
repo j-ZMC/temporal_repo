@@ -103,12 +103,12 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 **Description:** "Break it down for me" on a step, or on a task typed into "Add a step", calls the route and opens a dialog listing the suggested steps, each editable or removable, with "Add these steps" and "Cancel". "Add as one step" adds the typed task directly. Any error shows "We couldn't break this down right now. Try again, or write the steps yourself." with both options, keeping the typed text.
 
 **Acceptance criteria:**
-- [ ] Nothing is added without "Add these steps"; edits in the dialog are what gets added
-- [ ] The fallback appears for every error type and manual adding always works
-- [ ] A loading state shows while waiting; the button can't be pressed twice
+- [x] Nothing is added without "Add these steps"; edits in the dialog are what gets added
+- [x] The fallback appears for every error type and manual adding always works
+- [x] A loading state shows while waiting; the button can't be pressed twice
 
 **Verification:**
-- [ ] Manual check: with a real key break a task down; with no key see the fallback and add a step by hand
+- [ ] Manual check: with a real key break a task down (no-key fallback and manual adding checked)
 
 **Dependencies:** Tasks 2 and 4
 
@@ -122,7 +122,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 ## Checkpoint B: AI flow
 - [x] Route tests pass with the mock model, including "no profile fields sent"
 - [ ] With a real Groq key, a break-down returns valid steps in under 10 s
-- [ ] With no key, the calm fallback shows and manual steps still work
+- [x] With no key, the calm fallback shows and manual steps still work
 
 ## Phase 3: Check-in
 

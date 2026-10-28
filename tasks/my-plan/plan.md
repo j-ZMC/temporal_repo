@@ -31,12 +31,12 @@ A daily, "important first" plan at `/plan`: one current step (or up to 3, from t
 
 ### Phase 2: "Break it down for me"
 - [x] Task 4: Breakdown logic and `/api/breakdown` route with Groq (with mock-model tests)
-- [ ] Task 5: Break-down review dialog and "Add a step", with the manual fallback
+- [x] Task 5: Break-down review dialog and "Add a step", with the manual fallback
 
 ### Checkpoint B: AI flow
 - [x] Route tests pass with the mock model, including "no profile fields sent"
 - [ ] With a real Groq key: a break-down returns valid steps in under 10 s
-- [ ] With no key: the calm fallback shows and manual steps still work
+- [x] With no key: the calm fallback shows and manual steps still work
 
 ### Phase 3: Energy
 - [ ] Task 6: Check-in (four self-reported states)

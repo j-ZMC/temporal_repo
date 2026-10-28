@@ -108,7 +108,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 - [x] A loading state shows while waiting; the button can't be pressed twice
 
 **Verification:**
-- [ ] Manual check: with a real key break a task down (no-key fallback and manual adding checked)
+- [x] Manual check: with a real key break a task down (no-key fallback and manual adding checked)
 
 **Dependencies:** Tasks 2 and 4
 
@@ -121,7 +121,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 
 ## Checkpoint B: AI flow
 - [x] Route tests pass with the mock model, including "no profile fields sent"
-- [ ] With a real Groq key, a break-down returns valid steps in under 10 s
+- [x] With a real Groq key, a break-down returns valid steps in under 10 s
 - [x] With no key, the calm fallback shows and manual steps still work
 
 ## Phase 3: Check-in

@@ -35,7 +35,7 @@ A daily, "important first" plan at `/plan`: one current step (or up to 3, from t
 
 ### Checkpoint B: AI flow
 - [x] Route tests pass with the mock model, including "no profile fields sent"
-- [ ] With a real Groq key: a break-down returns valid steps in under 10 s
+- [x] With a real Groq key: a break-down returns valid steps in under 10 s
 - [x] With no key: the calm fallback shows and manual steps still work
 
 ### Phase 3: Energy

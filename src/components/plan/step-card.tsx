@@ -10,6 +10,7 @@ import {
   Clock,
   ListChecks,
   MessagesSquare,
+  Star,
   UserRound,
   type LucideIcon,
 } from "lucide-react";
@@ -100,17 +101,32 @@ export function CurrentStep({
   );
 }
 
-export function AllDone({ focus }: { focus: boolean }) {
+// The end of the path: every step as a lit star on one vertical line, so the person sees what they did.
+export function AllDone({ focus, steps }: { focus: boolean; steps: PlanStep[] }) {
   const heading = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (focus) heading.current?.focus();
   }, [focus]);
   return (
-    <section className="flex flex-col gap-2 rounded-xl border bg-card p-6">
-      <h2 ref={heading} tabIndex={-1} className="text-xl font-semibold outline-none">
-        You finished every step
-      </h2>
-      <p className="text-muted-foreground">Every star is lit. You can add a new step anytime.</p>
+    <section className="flex flex-col gap-5 rounded-2xl border border-primary/15 bg-card p-5 shadow-[0_10px_30px_-14px_rgb(36_59_83/0.35)] sm:p-7">
+      <div className="flex flex-col gap-2">
+        <h2 ref={heading} tabIndex={-1} className="text-2xl font-semibold outline-none">
+          Done for today
+        </h2>
+        <p className="text-muted-foreground">You finished every step on your path. Take a rest. Your plan will be here tomorrow.</p>
+      </div>
+      {steps.length > 0 && (
+        <ol aria-label="Steps you finished" className="flex flex-col">
+          {steps.map((s, i) => (
+            <li key={s.id} className="relative flex items-start gap-3 pb-4 last:pb-0">
+              {/* The line that joins this star to the next one. */}
+              {i < steps.length - 1 && <span aria-hidden className="absolute top-6 bottom-0 left-[11px] w-px bg-border" />}
+              <Star className="relative size-6 shrink-0 fill-star text-star" aria-hidden />
+              <span className="pt-0.5">{s.title}</span>
+            </li>
+          ))}
+        </ol>
+      )}
     </section>
   );
 }

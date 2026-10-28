@@ -46,6 +46,7 @@ function View() {
   const [request, setRequest] = useState<{ id: string; task: string; stepId?: string } | null>(null);
   const [checkedIn, setCheckedIn] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
+  const [justDone, setJustDone] = useState<string | null>(null);
   // The plan as it was before the last Remove, so one tap can bring the step back.
   const [removed, setRemoved] = useState<{ before: Plan; title: string } | null>(null);
   const adaptations = toAdaptations(profile ?? {});
@@ -82,6 +83,7 @@ function View() {
   function finish(id: string) {
     const updated = completeStep(plan, id, new Date());
     update(updated);
+    setJustDone(id);
     const upcoming = visibleSteps(updated, adaptations, energy)[0];
     setAnnouncement(upcoming ? `Step done. Next: ${upcoming.title}` : "Step done. You finished every step.");
     setPaused(adaptations.gentlePacing && upcoming !== undefined);
@@ -123,6 +125,7 @@ function View() {
           names={plan.steps.map((s) => s.title)}
           label={`${done} of ${plan.steps.length} steps done`}
           onSelect={(i) => setSelected(plan.steps[i].id)}
+          glow={plan.steps.findIndex((s) => s.id === justDone && s.done)}
         />
         <p className="text-muted-foreground">
           {done} of {plan.steps.length} steps done.{" "}
@@ -159,7 +162,7 @@ function View() {
           onBreakdown={() => setRequest({ id: crypto.randomUUID(), task: current.title, stepId: current.id })}
         />
       ) : (
-        <AllDone focus={announcement !== ""} />
+        <AllDone focus={announcement !== ""} steps={plan.steps} />
       )}
 
       {removed && <Removed title={removed.title} onUndo={undoRemove} />}

@@ -13,11 +13,14 @@ export function Constellation({
   label,
   names,
   onSelect,
+  glow,
 }: {
   lit: boolean[];
   label: string;
   names?: string[];
   onSelect?: (index: number) => void;
+  // The star that was just lit: it grows in with a soft ring, once.
+  glow?: number;
 }) {
   const gap = lit.length > 1 ? SPAN / (lit.length - 1) : 0;
   const points = lit.map((_, i) => [LEFT + i * gap, HEIGHTS[i % HEIGHTS.length]] as const);
@@ -36,7 +39,10 @@ export function Constellation({
       <path d={path} fill="none" stroke="var(--border)" strokeWidth="1.5" strokeLinejoin="round" />
       {points.map(([x, y], i) =>
         lit[i] ? (
-          <circle key={i} cx={x} cy={y} r={r} fill="var(--star)" />
+          <g key={i} className={i === glow ? "star-lit" : undefined}>
+            {i === glow && <circle cx={x} cy={y} r={r} fill="none" stroke="var(--star)" strokeWidth="2" className="star-ring" />}
+            <circle cx={x} cy={y} r={r} fill="var(--star)" className="star-core" />
+          </g>
         ) : (
           <circle key={i} cx={x} cy={y} r={r * 0.66} fill="var(--background)" stroke="var(--muted-foreground)" strokeWidth="1.5" />
         ),

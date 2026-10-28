@@ -132,6 +132,9 @@
   }
   html {
     @apply font-sans;
+    /* Keep focused and scrolled-to elements clear of the sticky header and the mobile bottom nav. */
+    scroll-padding-top: 5rem;
+    scroll-padding-bottom: 6rem;
   }
   /* Reading settings: classes on <html> toggled by the "Reading" panel */
   .text-large {

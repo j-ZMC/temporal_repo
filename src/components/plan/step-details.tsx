@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Duration, openLabel } from "@/components/plan/step-card";
-import type { PlanStep } from "@/lib/plan";
+import { completesItself, type PlanStep } from "@/lib/plan";
 
 const action = "h-11 px-5 text-base";
 
@@ -50,9 +50,11 @@ export function StepDetails({
               Mark as not done
             </Button>
           ) : (
-            <Button className={action} onClick={onDone}>
-              Done
-            </Button>
+            !completesItself(step.id) && (
+              <Button className={action} onClick={onDone}>
+                Done
+              </Button>
+            )
           )}
         </DialogFooter>
       </DialogContent>

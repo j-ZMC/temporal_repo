@@ -1,7 +1,17 @@
 // "Break it down for me": the request contract, the prompt and the AI call. See SPEC-plan.md.
-// Only the task text and three instruction flags ever reach the provider; .strict() rejects anything else.
+// Only the task text, three instruction flags and an optional starter-step id reach the server; .strict() rejects
+// anything else. The id maps to fixed app text below, so no free text beyond the task reaches the provider.
 import { generateText, Output, type LanguageModel } from "ai";
 import { z } from "zod";
+
+// What each starter step means inside Constela, so the AI breaks it into steps the app really has.
+const STARTER_CONTEXT = {
+  "starter-jobs": "In Constela's Jobs page the person sees 3 jobs picked for them and can open each one to read it.",
+  "starter-save": "In Constela's Jobs page every job has a Save button.",
+  "starter-company": "Each job in Constela has a short 'Get to know the company' page with key facts and questions to ask.",
+  "starter-practice": "Constela's Interview page shows one practice question; the person answers it out loud or in writing.",
+  "starter-expect": "Constela's Interview page has a short 'What to expect' guide about the steps of an interview.",
+} as const;
 
 export const breakdownRequest = z
   .object({
@@ -9,6 +19,7 @@ export const breakdownRequest = z
     explicitSteps: z.boolean(),
     summaryMode: z.boolean(),
     gentleTone: z.boolean(),
+    starter: z.enum(Object.keys(STARTER_CONTEXT) as [keyof typeof STARTER_CONTEXT]).optional(),
   })
   .strict();
 
@@ -45,6 +56,7 @@ export function buildPrompt(r: BreakdownRequest): { system: string; prompt: stri
   if (r.explicitSteps) rules.push("Make every step very specific and include a short example in the title when it helps.");
   if (r.summaryMode) rules.push("Keep every title under 8 words.");
   if (r.gentleTone) rules.push("Make the first step very easy, keep every step to 5 minutes or less, and use gentle wording.");
+  if (r.starter) rules.push(`This task is a step inside the Constela app. ${STARTER_CONTEXT[r.starter]} Use only steps the person can do there.`);
   return { system: rules.join("\n"), prompt: `<task>${r.task}</task>` };
 }
 

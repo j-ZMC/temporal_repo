@@ -14,7 +14,9 @@ export function AddStep({
   onChange,
   onAdd,
   onBreakdown,
+  breakdownFirst,
 }: {
+  breakdownFirst: boolean;
   value: string;
   onChange: (value: string) => void;
   onAdd: (title: string) => void;
@@ -37,6 +39,8 @@ export function AddStep({
       onSubmit={(e) => {
         e.preventDefault();
         if (!task) return;
+        // Enter does whatever the filled-in button does.
+        if (breakdownFirst) return onBreakdown(task);
         onAdd(task);
         setOpen(false);
       }}
@@ -54,10 +58,29 @@ export function AddStep({
         autoFocus
       />
       <div className="flex flex-wrap gap-3">
-        <Button type="button" variant={task ? "default" : "outline"} className={action} disabled={!task} onClick={() => onBreakdown(task)}>
+        <Button
+          type={breakdownFirst ? "submit" : "button"}
+          variant={breakdownFirst && task ? "default" : "outline"}
+          className={action}
+          disabled={!task}
+          onClick={breakdownFirst ? undefined : () => onBreakdown(task)}
+        >
           Break it down for me
         </Button>
-        <Button type="submit" variant="outline" className={action} disabled={!task}>
+        <Button
+          type={breakdownFirst ? "button" : "submit"}
+          variant={!breakdownFirst && task ? "default" : "outline"}
+          className={action}
+          disabled={!task}
+          onClick={
+            breakdownFirst
+              ? () => {
+                  onAdd(task);
+                  setOpen(false);
+                }
+              : undefined
+          }
+        >
           Add as one step
         </Button>
         <Button type="button" variant="ghost" className={action} onClick={() => setOpen(false)}>

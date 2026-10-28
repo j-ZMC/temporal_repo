@@ -55,6 +55,13 @@ describe("buildPrompt", () => {
     expect(system).toMatch(/adult/i);
   });
 
+  it("adds fixed app context for a starter step, and rejects unknown ids", () => {
+    const { system } = buildPrompt({ ...request, starter: "starter-save" });
+    expect(system).toMatch(/Save button/);
+    expect(buildPrompt(request).system).not.toMatch(/Constela app/);
+    expect(breakdownRequest.safeParse({ ...request, starter: "anything I type" }).success).toBe(false);
+  });
+
   it("turns each flag into an instruction, never into personal data", () => {
     const plain = buildPrompt(request).system;
     const all = buildPrompt({ ...request, explicitSteps: true, summaryMode: true, gentleTone: true }).system;

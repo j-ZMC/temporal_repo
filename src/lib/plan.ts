@@ -50,6 +50,11 @@ export function starterPlan(): Plan {
   return { version: 1, steps: STARTER_STEPS.map((s) => ({ ...s, done: false, source: "starter" })) };
 }
 
+// Steps the app marks done by itself, so the person gets no Done button for them.
+export function completesItself(id: string): boolean {
+  return id === PROFILE_STEP;
+}
+
 // The profile step reflects reality: done once a profile exists.
 export function syncWithProfile(plan: Plan, hasProfile: boolean): Plan {
   if (!hasProfile) return plan;

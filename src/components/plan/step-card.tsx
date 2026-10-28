@@ -15,10 +15,10 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
-import type { PlanStep, StepIcon } from "@/lib/plan";
+import { completesItself, type PlanStep, type StepIcon } from "@/lib/plan";
 import { cn } from "@/lib/utils";
 
-const ICONS: Record<StepIcon, LucideIcon> = {
+export const ICONS: Record<StepIcon, LucideIcon> = {
   user: UserRound,
   briefcase: BriefcaseBusiness,
   bookmark: Bookmark,
@@ -55,11 +55,7 @@ export function CurrentStep({
   onBreakdown: () => void;
 }) {
   const Icon = ICONS[step.icon];
-  const breakdown = (
-    <Button variant={breakdownFirst ? "default" : "ghost"} className={action} onClick={onBreakdown}>
-      Break it down for me
-    </Button>
-  );
+  const selfDone = completesItself(step.id);
   const heading = useRef<HTMLHeadingElement>(null);
   // After Done, the button is gone; land keyboard and screen-reader users on the new step.
   useEffect(() => {
@@ -85,66 +81,124 @@ export function CurrentStep({
           />
         </div>
       </div>
+      {selfDone ? (
+        <p className="text-muted-foreground">This step is done by itself when you finish your profile.</p>
+      ) : (
+        breakdownFirst && <p className="text-muted-foreground">This is a big step. You can break it down first.</p>
+      )}
+      {/* Same order on every step: go do it, mark it done, or make it smaller. */}
       <div className="flex flex-wrap gap-3">
-        {breakdownFirst && breakdown}
-        <Button variant={breakdownFirst ? "outline" : "default"} className={action} onClick={onDone}>
-          Done
-        </Button>
         {step.href && (
-          <Link href={step.href} className={buttonVariants({ variant: "outline", className: action })}>
+          <Link href={step.href} className={buttonVariants({ className: action })}>
             {openLabel(step.href)}
           </Link>
         )}
-        {!breakdownFirst && breakdown}
+        {!selfDone && (
+          <Button variant={step.href ? "outline" : "default"} className={action} onClick={onDone}>
+            Done
+          </Button>
+        )}
+        {!selfDone && (
+          <Button variant={breakdownFirst ? "outline" : "ghost"} className={action} onClick={onBreakdown}>
+            Break it down for me
+          </Button>
+        )}
       </div>
     </article>
   );
 }
 
-// The end of the path: every step as a lit star on one vertical line, so the person sees what they did.
-export function AllDone({ focus, steps }: { focus: boolean; steps: PlanStep[] }) {
+// The end of the path: today's finished steps as lit stars on one line, so the person sees what they did.
+export function AllDone({ focus, today }: { focus: boolean; today: PlanStep[] }) {
   const heading = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (focus) heading.current?.focus();
   }, [focus]);
+  const minutes = today.reduce((sum, s) => sum + s.minutes, 0);
   return (
     <section className="flex flex-col gap-5 rounded-2xl border border-primary/15 bg-card p-5 shadow-[0_10px_30px_-14px_rgb(36_59_83/0.35)] sm:p-7">
       <div className="flex flex-col gap-2">
         <h2 ref={heading} tabIndex={-1} className="text-2xl font-semibold outline-none">
-          Done for today
+          {today.length > 0 ? "Done for today" : "Every step is done"}
         </h2>
-        <p className="text-muted-foreground">You finished every step on your path. Take a rest. Your plan will be here tomorrow.</p>
+        <p className="text-pretty text-muted-foreground">
+          You finished every step on your path. Take a rest. When you are ready, add a new step.
+        </p>
       </div>
-      {steps.length > 0 && (
-        <ol aria-label="Steps you finished" className="flex flex-col">
-          {steps.map((s, i) => (
-            <li key={s.id} className="relative flex items-start gap-3 pb-4 last:pb-0">
-              {/* The line that joins this star to the next one. */}
-              {i < steps.length - 1 && <span aria-hidden className="absolute top-6 bottom-0 left-[11px] w-px bg-border" />}
-              <Star className="relative size-6 shrink-0 fill-star text-star" aria-hidden />
-              <span className="pt-0.5">{s.title}</span>
-            </li>
-          ))}
-        </ol>
+      {today.length > 0 && (
+        <div className="flex flex-col gap-3">
+          <p className="font-medium">
+            Today: {today.length} {today.length === 1 ? "step" : "steps"}, about {minutes} minutes
+          </p>
+          <ol aria-label="Steps you finished today" className="flex flex-col">
+            {today.map((s, i) => (
+              <li key={s.id} className="relative flex items-start gap-3 pb-4 last:pb-0">
+                {/* The line that joins this star to the next one. */}
+                {i < today.length - 1 && <span aria-hidden className="absolute top-6 bottom-0 left-[11px] w-0.5 bg-star/60" />}
+                <Star className="relative size-6 shrink-0 fill-star text-star" aria-hidden />
+                <span className="pt-0.5">{s.title}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
       )}
     </section>
   );
 }
 
 // gentlePacing: a pause after each step instead of jumping straight to the next one.
-export function Pause({ onContinue }: { onContinue: () => void }) {
+export function Pause({
+  finished,
+  next,
+  onContinue,
+  onStop,
+}: {
+  finished?: string;
+  next: PlanStep;
+  onContinue: () => void;
+  onStop: () => void;
+}) {
   const heading = useRef<HTMLHeadingElement>(null);
   useEffect(() => heading.current?.focus(), []);
   return (
-    <section className="flex flex-col gap-4 rounded-xl border bg-card p-6">
+    <section className="flex flex-col gap-4 rounded-2xl border border-primary/15 bg-card p-5 shadow-[0_10px_30px_-14px_rgb(36_59_83/0.35)] sm:p-7">
       <div className="flex flex-col gap-2">
-        <h2 ref={heading} tabIndex={-1} className="text-xl font-semibold outline-none">
+        <h2 ref={heading} tabIndex={-1} className="text-2xl font-semibold outline-none">
           Nice work
         </h2>
-        <p className="text-muted-foreground">Take a break if you need one. Your next step will be here.</p>
+        {finished && <p>You finished: {finished}.</p>}
+        <p className="text-pretty text-muted-foreground">
+          Next is {next.title} ({next.minutes} min). Take a break if you need one.
+        </p>
       </div>
-      <Button className={`${action} w-fit`} onClick={onContinue}>
-        Keep going
+      <div className="flex flex-wrap gap-3">
+        <Button className={action} onClick={onContinue}>
+          Keep going
+        </Button>
+        {/* Stopping is a real choice, not a failure: as visible as going on. */}
+        <Button variant="outline" className={action} onClick={onStop}>
+          Stop for today
+        </Button>
+      </div>
+    </section>
+  );
+}
+
+export function Rest({ next, onBack }: { next?: PlanStep; onBack: () => void }) {
+  const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => heading.current?.focus(), []);
+  return (
+    <section className="flex flex-col gap-4 rounded-2xl border border-primary/15 bg-card p-5 shadow-[0_10px_30px_-14px_rgb(36_59_83/0.35)] sm:p-7">
+      <div className="flex flex-col gap-2">
+        <h2 ref={heading} tabIndex={-1} className="text-2xl font-semibold outline-none">
+          Rest well
+        </h2>
+        <p className="text-pretty text-muted-foreground">
+          You did enough for today.{next ? ` Your next step is waiting: ${next.title}.` : ""}
+        </p>
+      </div>
+      <Button variant="outline" className={`${action} w-fit`} onClick={onBack}>
+        Show my plan
       </Button>
     </section>
   );

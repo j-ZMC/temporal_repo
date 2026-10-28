@@ -99,6 +99,7 @@ Request (validated with Zod; anything else returns 400):
 ```
 - `task`: 1 to 200 characters, trimmed.
 - `gentleTone`: true after a Low energy or Stressed check-in; asks for a calmer tone and steps of 5 minutes or less.
+- `starter` (optional): the id of a starter step being broken down (`starter-jobs`, `starter-save`, `starter-company`, `starter-practice`, `starter-expect`). The server maps it to a fixed sentence about what that step means in Constela, so the AI suggests steps the app really has. It is never free text.
 
 Response:
 ```json

@@ -7,7 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Duration } from "@/components/plan/step-card";
 import type { NewStep, PlanStep } from "@/lib/plan";
 
-export type BreakdownFlags = { explicitSteps: boolean; summaryMode: boolean; gentleTone: boolean };
+// starter: which starter step is being broken down, so the server can tell the AI what that step means in Constela.
+export type BreakdownFlags = { explicitSteps: boolean; summaryMode: boolean; gentleTone: boolean; starter?: string };
 type Draft = { key: string; title: string; minutes: number };
 type Status = "loading" | "review" | "error";
 
@@ -83,7 +84,8 @@ export function BreakdownDialog({
 
   return (
     <Dialog open onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="gap-5 p-5 text-base sm:max-w-lg">
+      {/* Never taller than the screen: the header and buttons stay put and only the steps scroll. */}
+      <DialogContent className="max-h-[calc(100dvh-2rem)] grid-rows-[auto_minmax(0,1fr)_auto] gap-5 p-5 text-base sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="text-xl leading-tight font-semibold">Break it down</DialogTitle>
           <DialogDescription className="text-base">{task}</DialogDescription>
@@ -100,7 +102,7 @@ export function BreakdownDialog({
         )}
 
         {status === "review" && (
-          <div className="flex flex-col gap-3">
+          <div className="-mx-5 flex min-h-0 flex-col gap-3 overflow-y-auto px-5 py-1">
             <p className="text-muted-foreground">
               {manual ? "Write one small step in each box." : "Check the steps. Change or remove any before you add them."}
             </p>
@@ -126,7 +128,13 @@ export function BreakdownDialog({
                     />
                     <div className="flex items-center justify-between">
                       <Duration minutes={s.minutes} />
-                      <Button variant="ghost" className="h-11 px-3" onClick={() => remove(s.key)} aria-label={`Remove step ${i + 1}`}>
+                      <Button
+                        variant="ghost"
+                        className="h-11 px-3"
+                        onClick={() => remove(s.key)}
+                        disabled={steps.length === 1}
+                        aria-label={`Remove step ${i + 1}`}
+                      >
                         Remove
                       </Button>
                     </div>
@@ -143,6 +151,9 @@ export function BreakdownDialog({
         <DialogFooter className="-mx-5 -mb-5 p-5">
           {status === "error" ? (
             <>
+              <Button variant="ghost" className={action} onClick={onClose}>
+                Cancel
+              </Button>
               <Button variant="outline" className={action} onClick={writeYourself}>
                 Write the steps yourself
               </Button>

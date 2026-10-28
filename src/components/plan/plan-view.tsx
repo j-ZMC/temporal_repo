@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Constellation } from "@/components/profile/constellation";
 import { AddStep } from "@/components/plan/add-step";
 import { BreakdownDialog } from "@/components/plan/breakdown-dialog";
 import { CheckInReply, EnergyCheckIn } from "@/components/plan/energy-check-in";
-import { AllDone, CurrentStep, Duration, NextStep, Pause, Removed } from "@/components/plan/step-card";
+import { AllDone, CurrentStep, Duration, ICONS, NextStep, Pause, Removed, Rest } from "@/components/plan/step-card";
 import { StepDetails } from "@/components/plan/step-details";
 import {
   addSteps,
@@ -15,6 +16,7 @@ import {
   completeStep,
   gentleTone,
   loadPlan,
+  localDate,
   removeStep,
   resetCheckIn,
   savePlan,
@@ -47,6 +49,8 @@ function View() {
   const [checkedIn, setCheckedIn] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [justDone, setJustDone] = useState<string | null>(null);
+  // shortcut: "Stop for today" lasts for this visit only; store it per day in the plan if people ask for it to stick.
+  const [resting, setResting] = useState(false);
   // The plan as it was before the last Remove, so one tap can bring the step back.
   const [removed, setRemoved] = useState<{ before: Plan; title: string } | null>(null);
   const adaptations = toAdaptations(profile ?? {});
@@ -79,6 +83,9 @@ function View() {
   const later = plan.steps.filter((s) => !s.done && s !== current && !next.includes(s));
   const done = plan.steps.filter((s) => s.done).length;
   const selectedStep = plan.steps.find((s) => s.id === selected);
+  const finishedToday = plan.steps.filter((s) => s.done && s.doneAt && localDate(new Date(s.doneAt)) === localDate(now));
+  const justDoneTitle = plan.steps.find((s) => s.id === justDone)?.title;
+  const breakdownFirst = (step: PlanStep) => adaptations.offerBreakdownFirst && step.minutes > 3;
 
   function finish(id: string) {
     const updated = completeStep(plan, id, new Date());
@@ -129,7 +136,7 @@ function View() {
         />
         <p className="text-muted-foreground">
           {done} of {plan.steps.length} steps done.{" "}
-          <span className="text-sm">Tap a star to see or undo a step.</span>
+          <span className="text-sm">Tap a star to see a step.</span>
         </p>
         {!profile && (
           <p className="text-sm text-muted-foreground">
@@ -148,26 +155,35 @@ function View() {
         {announcement}
       </p>
 
-      {paused ? (
-        <Pause onContinue={() => setPaused(false)} />
+      {resting ? (
+        <Rest next={current} onBack={() => setResting(false)} />
+      ) : paused && current ? (
+        <Pause
+          finished={justDoneTitle}
+          next={current}
+          onContinue={() => setPaused(false)}
+          onStop={() => {
+            setPaused(false);
+            setResting(true);
+          }}
+        />
       ) : current ? (
         <CurrentStep
           key={current.id}
           step={current}
           focus={announcement !== ""}
-          // Breaking down a 1 to 3 minute step is more work than doing it, so Done stays first there.
-          breakdownFirst={adaptations.offerBreakdownFirst && current.minutes > 3}
+          breakdownFirst={breakdownFirst(current)}
           prominentTime={adaptations.showDurations}
           onDone={() => finish(current.id)}
           onBreakdown={() => setRequest({ id: crypto.randomUUID(), task: current.title, stepId: current.id })}
         />
       ) : (
-        <AllDone focus={announcement !== ""} steps={plan.steps} />
+        <AllDone focus={announcement !== ""} today={finishedToday} />
       )}
 
       {removed && <Removed title={removed.title} onUndo={undoRemove} />}
 
-      {!paused && next.length > 0 && (
+      {!paused && !resting && next.length > 0 && (
         <section aria-labelledby="up-next" className="flex flex-col gap-3">
           <h2 id="up-next" className="text-sm font-semibold text-muted-foreground">
             Up next
@@ -180,28 +196,34 @@ function View() {
         </section>
       )}
 
-      {later.length > 0 && (
+      {!resting && later.length > 0 && (
         <details className="group">
           <summary className="flex h-11 w-fit cursor-pointer items-center rounded-lg px-1 font-medium text-muted-foreground hover:text-foreground">
+            <ChevronRight className="size-4 transition-transform group-open:rotate-90" aria-hidden />
             {adaptations.importantFirst
               ? `${later.length} more ${later.length === 1 ? "step" : "steps"}, out of the way for now`
               : `See what's next (${later.length})`}
           </summary>
           <ul className="flex flex-col divide-y">
-            {later.map((s) => (
+            {later.map((s) => {
+              const Icon = ICONS[s.icon];
+              return (
               <li key={s.id} className="flex items-center gap-3 py-2 pl-1">
+                <Icon className="size-5 shrink-0 text-muted-foreground" aria-hidden />
                 <span className="flex-1">{s.title}</span>
                 <Duration minutes={s.minutes} />
                 <Button variant="ghost" className="h-11 px-4" onClick={() => remove(s)} aria-label={`Remove: ${s.title}`}>
                   Remove
                 </Button>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </details>
       )}
 
       <AddStep
+        breakdownFirst={adaptations.offerBreakdownFirst}
         value={newTask}
         onChange={setNewTask}
         onAdd={addOne}
@@ -232,7 +254,8 @@ function View() {
         <BreakdownDialog
           key={request.id}
           task={request.task}
-          flags={flags}
+          // Starter steps tell the server which fixed app description to give the AI.
+          flags={{ ...flags, starter: request.stepId?.startsWith("starter-") ? request.stepId : undefined }}
           onAdd={addFromDialog}
           onClose={() => setRequest(null)}
         />

@@ -125,7 +125,8 @@ function View() {
           onSelect={(i) => setSelected(plan.steps[i].id)}
         />
         <p className="text-muted-foreground">
-          {done} of {plan.steps.length} steps done
+          {done} of {plan.steps.length} steps done.{" "}
+          <span className="text-sm">Tap a star to see or undo a step.</span>
         </p>
         {!profile && (
           <p className="text-sm text-muted-foreground">
@@ -151,7 +152,8 @@ function View() {
           key={current.id}
           step={current}
           focus={announcement !== ""}
-          breakdownFirst={adaptations.offerBreakdownFirst}
+          // Breaking down a 1 to 3 minute step is more work than doing it, so Done stays first there.
+          breakdownFirst={adaptations.offerBreakdownFirst && current.minutes > 3}
           prominentTime={adaptations.showDurations}
           onDone={() => finish(current.id)}
           onBreakdown={() => setRequest({ id: crypto.randomUUID(), task: current.title, stepId: current.id })}

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Duration } from "@/components/plan/step-card";
 import type { NewStep, PlanStep } from "@/lib/plan";
 
@@ -106,20 +106,31 @@ export function BreakdownDialog({
             </p>
             <ol className="flex flex-col gap-2">
               {steps.map((s, i) => (
-                <li key={s.key} className="flex flex-wrap items-center gap-x-2 sm:flex-nowrap">
-                  <Input
-                    value={s.title}
-                    onChange={(e) => edit(s.key, e.target.value)}
-                    maxLength={80}
-                    aria-label={`Step ${i + 1}`}
-                    // The button that opened manual mode is gone; start typing in the first box.
-                    autoFocus={manual && i === 0}
-                    className="h-11 flex-1 basis-full text-base sm:basis-0 md:text-base"
-                  />
-                  <Duration minutes={s.minutes} />
-                  <Button variant="ghost" className="ml-auto h-11 px-3 sm:ml-0" onClick={() => remove(s.key)} aria-label={`Remove step ${i + 1}`}>
-                    Remove
-                  </Button>
+                <li key={s.key} className="grid grid-cols-[1.5rem_1fr] items-start gap-x-1">
+                  <span aria-hidden className="pt-2.5 font-medium text-muted-foreground">
+                    {i + 1}.
+                  </span>
+                  <div className="flex flex-col">
+                    {/* Grows with the text, so every word of a suggested step is readable before adding it. */}
+                    <Textarea
+                      value={s.title}
+                      onChange={(e) => edit(s.key, e.target.value)}
+                      // A step title is one line; it only wraps visually.
+                      onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
+                      maxLength={80}
+                      rows={1}
+                      aria-label={`Step ${i + 1}`}
+                      // The button that opened manual mode is gone; start typing in the first box.
+                      autoFocus={manual && i === 0}
+                      className="min-h-11 resize-none text-base md:text-base"
+                    />
+                    <div className="flex items-center justify-between">
+                      <Duration minutes={s.minutes} />
+                      <Button variant="ghost" className="h-11 px-3" onClick={() => remove(s.key)} aria-label={`Remove step ${i + 1}`}>
+                        Remove
+                      </Button>
+                    </div>
+                  </div>
                 </li>
               ))}
             </ol>

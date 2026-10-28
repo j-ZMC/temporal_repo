@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Duration } from "@/components/plan/step-card";
+import { Duration, openLabel } from "@/components/plan/step-card";
 import type { PlanStep } from "@/lib/plan";
 
 const action = "h-11 px-5 text-base";
@@ -42,7 +42,7 @@ export function StepDetails({
           )}
           {step.href && (
             <Link href={step.href} className={buttonVariants({ variant: "outline", className: action })}>
-              Open
+              {openLabel(step.href)}
             </Link>
           )}
           {step.done ? (

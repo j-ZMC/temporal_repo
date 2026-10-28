@@ -29,6 +29,14 @@ const ICONS: Record<StepIcon, LucideIcon> = {
 
 const action = "h-11 px-5 text-base";
 
+const DESTINATIONS: Record<string, string> = { "/profile": "Profile", "/jobs": "Jobs", "/interview": "Interview" };
+
+// "Open Jobs", not a bare "Open": says where the link goes, also for screen readers.
+export function openLabel(href: string) {
+  const name = DESTINATIONS[href];
+  return name ? `Open ${name}` : "Open";
+}
+
 // The one thing to do now: icon, verb-first title, duration, and its actions.
 export function CurrentStep({
   step,
@@ -83,7 +91,7 @@ export function CurrentStep({
         </Button>
         {step.href && (
           <Link href={step.href} className={buttonVariants({ variant: "outline", className: action })}>
-            Open
+            {openLabel(step.href)}
           </Link>
         )}
         {!breakdownFirst && breakdown}

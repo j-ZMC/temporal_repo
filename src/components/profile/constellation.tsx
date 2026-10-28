@@ -56,7 +56,7 @@ export function Constellation({
           aria-label={`${names?.[i] ?? `Step ${i + 1}`}, ${lit[i] ? "done" : "not done"}`}
           // shortcut: targets are 44 px while stars are at least 44 px apart (up to about 8 steps); longer plans get smaller targets, but every step stays reachable from the lists below.
           style={{ left: `${(x / WIDTH) * 100}%`, top: `${(y / HEIGHT) * 100}%`, width: gap ? `min(44px, ${(gap / WIDTH) * 100}%)` : "44px" }}
-          className="absolute aspect-square min-w-6 -translate-x-1/2 -translate-y-1/2 rounded-full outline-none hover:bg-foreground/5 focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="absolute aspect-square min-w-6 -translate-x-1/2 -translate-y-1/2 rounded-full outline-none hover:bg-primary/10 hover:ring-2 hover:ring-primary/30 focus-visible:ring-3 focus-visible:ring-ring/50"
         />
       ))}
     </div>

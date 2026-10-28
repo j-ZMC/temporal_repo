@@ -39,7 +39,7 @@ A daily, "important first" plan at `/plan`: one current step (or up to 3, from t
 - [x] With no key: the calm fallback shows and manual steps still work
 
 ### Phase 3: Energy
-- [ ] Task 6: Check-in (four self-reported states)
+- [x] Task 6: Check-in (four self-reported states)
 
 ### Checkpoint: Complete
 - [ ] Every success criterion in SPEC-plan.md is met

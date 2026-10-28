@@ -24,7 +24,8 @@ export type PlanStep = {
   source: "starter" | "user" | "ai";
 };
 
-export type Plan = { version: 1; steps: PlanStep[]; energy?: { level: Energy; date: string } };
+// checkInSkipped: the local date the person skipped the check-in, so it stays hidden that day.
+export type Plan = { version: 1; steps: PlanStep[]; energy?: { level: Energy; date: string }; checkInSkipped?: string };
 
 export type NewStep = { title: string; minutes: number; icon?: StepIcon; href?: string };
 
@@ -67,6 +68,32 @@ export function visibleSteps(plan: Plan, a: Adaptations, energy?: Energy): PlanS
     return easiest ? [easiest] : [];
   }
   return todo.slice(0, a.stepsAtOnce);
+}
+
+// The check-in is asked once per local day (YYYY-MM-DD, the person's own calendar day).
+export function localDate(now: Date): string {
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+
+export function todayEnergy(plan: Plan, now: Date): Energy | undefined {
+  return plan.energy?.date === localDate(now) ? plan.energy.level : undefined;
+}
+
+export function checkInDue(plan: Plan, now: Date): boolean {
+  const today = localDate(now);
+  return plan.energy?.date !== today && plan.checkInSkipped !== today;
+}
+
+// null skips the check-in for today without changing the plan.
+export function setEnergy(plan: Plan, level: Energy | null, now: Date): Plan {
+  const rest = resetCheckIn(plan);
+  return level ? { ...rest, energy: { level, date: localDate(now) } } : { ...rest, checkInSkipped: localDate(now) };
+}
+
+// "Change": forget today's answer so the check-in shows again.
+export function resetCheckIn(plan: Plan): Plan {
+  return { version: plan.version, steps: plan.steps };
 }
 
 export function completeStep(plan: Plan, id: string, now: Date): Plan {
@@ -117,10 +144,12 @@ function validStep(raw: unknown): raw is PlanStep {
   );
 }
 
+const DATE = /^\d{4}-\d{2}-\d{2}$/;
+
 function validEnergy(raw: unknown): raw is Plan["energy"] {
   if (typeof raw !== "object" || raw === null) return false;
   const e = raw as Record<string, unknown>;
-  return (ENERGY_LEVELS as readonly unknown[]).includes(e.level) && typeof e.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(e.date);
+  return (ENERGY_LEVELS as readonly unknown[]).includes(e.level) && typeof e.date === "string" && DATE.test(e.date);
 }
 
 export function loadPlan(): Plan {
@@ -131,6 +160,7 @@ export function loadPlan(): Plan {
     if (data?.version !== 1 || !Array.isArray(data.steps)) return starterPlan();
     const plan: Plan = { version: 1, steps: data.steps.filter(validStep) };
     if (validEnergy(data.energy)) plan.energy = data.energy;
+    if (typeof data.checkInSkipped === "string" && DATE.test(data.checkInSkipped)) plan.checkInSkipped = data.checkInSkipped;
     return plan;
   } catch {
     return starterPlan();

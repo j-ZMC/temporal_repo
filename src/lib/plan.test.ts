@@ -6,7 +6,12 @@ import {
   gentleTone,
   addStepToPlan,
   addSteps,
+  checkInDue,
   completeStep,
+  localDate,
+  resetCheckIn,
+  setEnergy,
+  todayEnergy,
   loadPlan,
   removeStep,
   savePlan,
@@ -162,6 +167,13 @@ describe("loadPlan / savePlan", () => {
     expect(loadPlan().energy).toBeUndefined();
   });
 
+  it("keeps a valid skipped date and drops a broken one", () => {
+    store.plan = JSON.stringify({ version: 1, steps: [], checkInSkipped: "2026-10-27" });
+    expect(loadPlan().checkInSkipped).toBe("2026-10-27");
+    store.plan = JSON.stringify({ version: 1, steps: [], checkInSkipped: "yesterday" });
+    expect(loadPlan().checkInSkipped).toBeUndefined();
+  });
+
   it("addStepToPlan saves a new step at the end", () => {
     addStepToPlan({ title: "Read the job at Acme", minutes: 5, icon: "briefcase", href: "/jobs" });
     expect(loadPlan().steps.at(-1)).toMatchObject({ title: "Read the job at Acme", href: "/jobs", source: "user" });
@@ -178,5 +190,39 @@ describe("loadPlan / savePlan", () => {
     });
     expect(loadPlan().steps).toHaveLength(6);
     expect(() => savePlan(starterPlan())).not.toThrow();
+  });
+});
+
+describe("check-in", () => {
+  const morning = new Date(2026, 9, 28, 9);
+  const tomorrow = new Date(2026, 9, 29, 9);
+
+  it("uses the local calendar day", () => {
+    expect(localDate(new Date(2026, 0, 5, 23, 59))).toBe("2026-01-05");
+  });
+
+  it("is due until answered or skipped, and again the next day", () => {
+    const plan = starterPlan();
+    expect(checkInDue(plan, morning)).toBe(true);
+    const answered = setEnergy(plan, "low", morning);
+    expect(checkInDue(answered, morning)).toBe(false);
+    expect(todayEnergy(answered, morning)).toBe("low");
+    expect(checkInDue(answered, tomorrow)).toBe(true);
+    expect(todayEnergy(answered, tomorrow)).toBeUndefined();
+  });
+
+  it("skipping hides it for today without setting a feeling or touching steps", () => {
+    const plan = starterPlan();
+    const skipped = setEnergy(plan, null, morning);
+    expect(checkInDue(skipped, morning)).toBe(false);
+    expect(todayEnergy(skipped, morning)).toBeUndefined();
+    expect(skipped.steps).toEqual(plan.steps);
+    expect(checkInDue(skipped, tomorrow)).toBe(true);
+  });
+
+  it("change forgets today's answer so it is asked again", () => {
+    const plan = resetCheckIn(setEnergy(starterPlan(), "stressed", morning));
+    expect(checkInDue(plan, morning)).toBe(true);
+    expect(plan.energy).toBeUndefined();
   });
 });

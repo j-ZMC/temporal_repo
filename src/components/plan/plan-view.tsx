@@ -6,15 +6,22 @@ import { Button } from "@/components/ui/button";
 import { Constellation } from "@/components/profile/constellation";
 import { AddStep } from "@/components/plan/add-step";
 import { BreakdownDialog } from "@/components/plan/breakdown-dialog";
+import { CheckInReply, EnergyCheckIn } from "@/components/plan/energy-check-in";
 import { AllDone, CurrentStep, Duration, NextStep, Pause } from "@/components/plan/step-card";
 import {
   addSteps,
+  checkInDue,
   completeStep,
+  gentleTone,
   loadPlan,
   removeStep,
+  resetCheckIn,
   savePlan,
+  setEnergy,
   syncWithProfile,
+  todayEnergy,
   visibleSteps,
+  type Energy,
   type NewStep,
   type Plan,
   type PlanStep,
@@ -35,16 +42,18 @@ function View() {
   const [newTask, setNewTask] = useState("");
   // stepId: break down an existing step (it is replaced); otherwise the typed task is broken down.
   const [request, setRequest] = useState<{ id: string; task: string; stepId?: string } | null>(null);
+  const [checkedIn, setCheckedIn] = useState(false);
   const adaptations = toAdaptations(profile ?? {});
-  // shortcut: gentleTone stays false until the check-in lands (My plan Task 6).
-  const flags = { explicitSteps: adaptations.explicitSteps, summaryMode: adaptations.summaryMode, gentleTone: false };
+  const now = new Date();
+  const energy = todayEnergy(plan, now);
+  const flags = { explicitSteps: adaptations.explicitSteps, summaryMode: adaptations.summaryMode, gentleTone: gentleTone(energy) };
 
   function update(next: Plan) {
     setPlan(next);
     savePlan(next);
   }
 
-  const shown = visibleSteps(plan, adaptations);
+  const shown = visibleSteps(plan, adaptations, energy);
   const [current, ...upNext] = shown;
   // importantFirst: only the current step stays on screen; everything else waits behind a count.
   const next = adaptations.importantFirst ? [] : upNext;
@@ -54,9 +63,16 @@ function View() {
   function finish(id: string) {
     const updated = completeStep(plan, id, new Date());
     update(updated);
-    const upcoming = visibleSteps(updated, adaptations)[0];
+    const upcoming = visibleSteps(updated, adaptations, energy)[0];
     setAnnouncement(upcoming ? `Step done. Next: ${upcoming.title}` : "Step done. You finished every step.");
     setPaused(adaptations.gentlePacing && upcoming !== undefined);
+  }
+
+  function checkIn(level: Energy | null) {
+    update(setEnergy(plan, level, new Date()));
+    // The reply takes focus, so the step card must not grab it too.
+    setAnnouncement("");
+    setCheckedIn(true);
   }
 
   function addFromDialog(steps: NewStep[], source: PlanStep["source"]) {
@@ -96,7 +112,10 @@ function View() {
             to fit the plan to you.
           </p>
         )}
+        {energy && <CheckInReply level={energy} focus={checkedIn} onChange={() => update(resetCheckIn(plan))} />}
       </header>
+
+      {checkInDue(plan, now) && <EnergyCheckIn onChoose={checkIn} />}
 
       <p aria-live="polite" className="sr-only">
         {announcement}

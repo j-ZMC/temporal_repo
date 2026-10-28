@@ -131,12 +131,12 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-plan.md](../../SPEC-plan.md)
 **Description:** "How are you feeling today?" with Low energy, Stressed, Okay and Good at the top of My plan, asked once per day and skippable. Low energy shows one step of 5 minutes or less; Stressed shows the shortest step; both set gentleTone for the AI. Okay and Good use the profile setting. Stored in the plan for today's date.
 
 **Acceptance criteria:**
-- [ ] Choosing Low changes the visible steps immediately; a new day asks again
-- [ ] Skipping hides the check-in for the day without changing anything
+- [x] Choosing Low changes the visible steps immediately; a new day asks again
+- [x] Skipping hides the check-in for the day without changing anything
 
 **Verification:**
-- [ ] Tests pass for the energy rules in `visibleSteps`
-- [ ] Manual check: Low, Okay, Good and skip
+- [x] Tests pass for the energy rules in `visibleSteps`
+- [x] Manual check: Low, Okay, Good and skip
 
 **Dependencies:** Task 3
 

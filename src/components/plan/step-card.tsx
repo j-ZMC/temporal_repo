@@ -57,13 +57,17 @@ export function CurrentStep({
     if (focus) heading.current?.focus();
   }, [focus]);
   return (
-    <article aria-labelledby={`step-${step.id}`} className="flex flex-col gap-5 rounded-xl border bg-card p-5 sm:p-6">
+    // The one weighted surface on the page: everything else stays flat so this reads as "do this now".
+    <article
+      aria-labelledby={`step-${step.id}`}
+      className="flex flex-col gap-5 rounded-2xl border border-primary/15 bg-card p-5 shadow-[0_10px_30px_-14px_rgb(36_59_83/0.35)] sm:p-7"
+    >
       <div className="flex items-start gap-4">
         <span className="grid size-12 shrink-0 place-items-center rounded-full bg-secondary text-primary">
           <Icon className="size-6" aria-hidden />
         </span>
         <div className="flex flex-col gap-1">
-          <h2 id={`step-${step.id}`} ref={heading} tabIndex={-1} className="text-xl font-semibold text-balance outline-none">
+          <h2 id={`step-${step.id}`} ref={heading} tabIndex={-1} className="text-2xl font-semibold text-balance outline-none">
             {step.title}
           </h2>
           <Duration
@@ -125,11 +129,26 @@ export function Pause({ onContinue }: { onContinue: () => void }) {
 export function NextStep({ step }: { step: PlanStep }) {
   const Icon = ICONS[step.icon];
   return (
-    <li className="flex items-center gap-3 rounded-lg border bg-card px-4 py-3">
+    <li className="flex items-center gap-3 border-b px-1 py-3 last:border-b-0">
       <Icon className="size-5 shrink-0 text-muted-foreground" aria-hidden />
       <span className="flex-1">{step.title}</span>
       <Duration minutes={step.minutes} />
     </li>
+  );
+}
+
+// Shown after Remove until the next change, so a stray tap is never final. No timer: it waits for the person.
+export function Removed({ title, onUndo }: { title: string; onUndo: () => void }) {
+  const undo = useRef<HTMLButtonElement>(null);
+  // The removed row is gone; keep keyboard and screen-reader users next to the way back.
+  useEffect(() => undo.current?.focus(), [title]);
+  return (
+    <div role="status" className="flex flex-wrap items-center gap-x-3 rounded-lg bg-secondary px-4 py-1">
+      <p className="flex-1">Removed: {title}</p>
+      <Button ref={undo} variant="ghost" className="h-11 px-4 text-base" onClick={onUndo}>
+        Undo
+      </Button>
+    </div>
   );
 }
 

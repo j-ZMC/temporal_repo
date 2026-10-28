@@ -4,8 +4,6 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import type { Energy } from "@/lib/plan";
 
-const action = "h-11 px-5 text-base";
-
 const CHOICES: { level: Energy; label: string }[] = [
   { level: "low", label: "Low energy" },
   { level: "stressed", label: "Stressed" },
@@ -22,21 +20,22 @@ const REPLIES: Record<Energy, string> = {
 
 // Self-reported, one tap, skippable. The app never guesses feelings from what people write.
 export function EnergyCheckIn({ onChoose }: { onChoose: (level: Energy | null) => void }) {
+  // A light row in the header, not a card: it should never outweigh the step it adjusts.
   return (
-    <section aria-labelledby="check-in" className="flex flex-col gap-3 rounded-xl border bg-card p-5">
-      <h2 id="check-in" className="text-lg font-semibold">
+    <section aria-labelledby="check-in" className="flex flex-col gap-2 pt-1">
+      <h2 id="check-in" className="font-medium">
         How are you feeling today?
       </h2>
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <div className="flex flex-wrap gap-2">
         {CHOICES.map((c) => (
-          <Button key={c.level} variant="outline" className={action} onClick={() => onChoose(c.level)}>
+          <Button key={c.level} variant="outline" className="h-11 rounded-full bg-card px-4 text-base" onClick={() => onChoose(c.level)}>
             {c.label}
           </Button>
         ))}
+        <Button variant="ghost" className="h-11 px-3 text-base text-muted-foreground underline underline-offset-4" onClick={() => onChoose(null)}>
+          Skip for today
+        </Button>
       </div>
-      <Button variant="ghost" className={`${action} w-fit`} onClick={() => onChoose(null)}>
-        Skip for today
-      </Button>
     </section>
   );
 }

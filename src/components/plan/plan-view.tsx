@@ -7,7 +7,7 @@ import { Constellation } from "@/components/profile/constellation";
 import { AddStep } from "@/components/plan/add-step";
 import { BreakdownDialog } from "@/components/plan/breakdown-dialog";
 import { CheckInReply, EnergyCheckIn } from "@/components/plan/energy-check-in";
-import { AllDone, CurrentStep, Duration, NextStep, Pause } from "@/components/plan/step-card";
+import { AllDone, CurrentStep, Duration, NextStep, Pause, Removed } from "@/components/plan/step-card";
 import { StepDetails } from "@/components/plan/step-details";
 import {
   addSteps,
@@ -46,6 +46,8 @@ function View() {
   const [request, setRequest] = useState<{ id: string; task: string; stepId?: string } | null>(null);
   const [checkedIn, setCheckedIn] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
+  // The plan as it was before the last Remove, so one tap can bring the step back.
+  const [removed, setRemoved] = useState<{ before: Plan; title: string } | null>(null);
   const adaptations = toAdaptations(profile ?? {});
   const now = new Date();
   const energy = todayEnergy(plan, now);
@@ -54,6 +56,19 @@ function View() {
   function update(next: Plan) {
     setPlan(next);
     savePlan(next);
+    setRemoved(null);
+  }
+
+  function remove(step: PlanStep) {
+    update(removeStep(plan, step.id));
+    setRemoved({ before: plan, title: step.title });
+    setAnnouncement("");
+  }
+
+  function undoRemove() {
+    if (!removed) return;
+    update(removed.before);
+    setAnnouncement(`Back on your plan: ${removed.title}`);
   }
 
   const shown = visibleSteps(plan, adaptations, energy);
@@ -122,9 +137,8 @@ function View() {
           </p>
         )}
         {energy && <CheckInReply level={energy} focus={checkedIn} onChange={() => update(resetCheckIn(plan))} />}
+        {checkInDue(plan, now) && <EnergyCheckIn onChoose={checkIn} />}
       </header>
-
-      {checkInDue(plan, now) && <EnergyCheckIn onChoose={checkIn} />}
 
       <p aria-live="polite" className="sr-only">
         {announcement}
@@ -134,24 +148,26 @@ function View() {
         <Pause onContinue={() => setPaused(false)} />
       ) : current ? (
         <CurrentStep
-            key={current.id}
-            step={current}
-            focus={announcement !== ""}
-            breakdownFirst={adaptations.offerBreakdownFirst}
-            prominentTime={adaptations.showDurations}
-            onDone={() => finish(current.id)}
-            onBreakdown={() => setRequest({ id: crypto.randomUUID(), task: current.title, stepId: current.id })}
-          />
+          key={current.id}
+          step={current}
+          focus={announcement !== ""}
+          breakdownFirst={adaptations.offerBreakdownFirst}
+          prominentTime={adaptations.showDurations}
+          onDone={() => finish(current.id)}
+          onBreakdown={() => setRequest({ id: crypto.randomUUID(), task: current.title, stepId: current.id })}
+        />
       ) : (
         <AllDone focus={announcement !== ""} />
       )}
+
+      {removed && <Removed title={removed.title} onUndo={undoRemove} />}
 
       {!paused && next.length > 0 && (
         <section aria-labelledby="up-next" className="flex flex-col gap-3">
           <h2 id="up-next" className="text-sm font-semibold text-muted-foreground">
             Up next
           </h2>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col">
             {next.map((s) => (
               <NextStep key={s.id} step={s} />
             ))}
@@ -160,23 +176,18 @@ function View() {
       )}
 
       {later.length > 0 && (
-        <details className="rounded-xl border bg-card">
-          <summary className="cursor-pointer p-4 font-medium">
+        <details className="group">
+          <summary className="flex h-11 w-fit cursor-pointer items-center rounded-lg px-1 font-medium text-muted-foreground hover:text-foreground">
             {adaptations.importantFirst
               ? `${later.length} more ${later.length === 1 ? "step" : "steps"}, out of the way for now`
               : `See what's next (${later.length})`}
           </summary>
-          <ul className="flex flex-col divide-y border-t">
+          <ul className="flex flex-col divide-y">
             {later.map((s) => (
-              <li key={s.id} className="flex items-center gap-3 p-4">
+              <li key={s.id} className="flex items-center gap-3 py-2 pl-1">
                 <span className="flex-1">{s.title}</span>
                 <Duration minutes={s.minutes} />
-                <Button
-                  variant="ghost"
-                  className="h-11 px-4"
-                  onClick={() => update(removeStep(plan, s.id))}
-                  aria-label={`Remove: ${s.title}`}
-                >
+                <Button variant="ghost" className="h-11 px-4" onClick={() => remove(s)} aria-label={`Remove: ${s.title}`}>
                   Remove
                 </Button>
               </li>
@@ -206,8 +217,7 @@ function View() {
           }}
           onRemove={() => {
             setSelected(null);
-            update(removeStep(plan, selectedStep.id));
-            setAnnouncement(`Removed: ${selectedStep.title}`);
+            remove(selectedStep);
           }}
           onClose={() => setSelected(null)}
         />

@@ -34,9 +34,12 @@ export function StepDetails({
           <Duration minutes={step.minutes} />
         </DialogHeader>
         <DialogFooter className="-mx-5 -mb-5 p-5">
-          <Button variant="ghost" className={action} onClick={onRemove}>
-            Remove
-          </Button>
+          {/* A lit star is a record of something done: it can be marked not done, never deleted. */}
+          {!step.done && (
+            <Button variant="ghost" className={action} onClick={onRemove}>
+              Remove
+            </Button>
+          )}
           {step.href && (
             <Link href={step.href} className={buttonVariants({ variant: "outline", className: action })}>
               Open

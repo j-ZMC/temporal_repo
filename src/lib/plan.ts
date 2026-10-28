@@ -39,6 +39,9 @@ export const STARTER_STEPS: readonly Omit<PlanStep, "done" | "source">[] = [
 ];
 
 const PROFILE_STEP = "starter-profile";
+// Starter steps that only make sense after another one ("that job" needs a saved job).
+// shortcut: a prerequisite that was removed or broken down counts as met; track needs on every step if users build longer chains.
+const NEEDS: Record<string, string> = { "starter-save": "starter-jobs", "starter-company": "starter-save" };
 const SHORT_STEP = 5;
 const MAX_MINUTES = 60;
 const MAX_TITLE = 80;
@@ -58,13 +61,15 @@ export function syncWithProfile(plan: Plan, hasProfile: boolean): Plan {
 
 export function visibleSteps(plan: Plan, a: Adaptations, energy?: Energy): PlanStep[] {
   const todo = plan.steps.filter((s) => !s.done);
+  // Low energy and stress pick a smaller step, but never one whose prerequisite is still waiting.
+  const ready = todo.filter((s) => !todo.some((t) => t.id === NEEDS[s.id]));
   if (energy === "low") {
-    const short = todo.find((s) => s.minutes <= SHORT_STEP) ?? todo[0];
+    const short = ready.find((s) => s.minutes <= SHORT_STEP) ?? todo[0];
     return short ? [short] : [];
   }
   if (energy === "stressed") {
     // The easiest win first: the shortest step, earliest in the path on a tie.
-    const easiest = todo.reduce<PlanStep | undefined>((best, s) => (!best || s.minutes < best.minutes ? s : best), undefined);
+    const easiest = ready.reduce<PlanStep | undefined>((best, s) => (!best || s.minutes < best.minutes ? s : best), undefined);
     return easiest ? [easiest] : [];
   }
   return todo.slice(0, a.stepsAtOnce);

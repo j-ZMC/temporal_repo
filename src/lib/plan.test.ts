@@ -63,9 +63,18 @@ describe("visibleSteps", () => {
     expect(visibleSteps(plan, DEFAULT_ADAPTATIONS, "low").map((s) => s.id)).toEqual(["long"]);
   });
 
-  it("when stressed shows only the shortest step", () => {
+  it("when stressed shows only the shortest step that is ready", () => {
     const steps = visibleSteps(starterPlan(), DEFAULT_ADAPTATIONS, "stressed");
-    expect(steps.map((s) => s.id)).toEqual(["starter-save"]);
+    expect(steps.map((s) => s.id)).toEqual(["starter-profile"]);
+  });
+
+  it("never offers a step before the one it needs", () => {
+    const plan = completeStep(starterPlan(), "starter-profile", new Date());
+    // "Save one job" (2 min) needs "Look at 3 jobs" (10 min) first.
+    expect(visibleSteps(plan, DEFAULT_ADAPTATIONS, "low")[0].id).toBe("starter-practice");
+    expect(visibleSteps(plan, DEFAULT_ADAPTATIONS, "stressed")[0].id).toBe("starter-practice");
+    const looked = completeStep(plan, "starter-jobs", new Date());
+    expect(visibleSteps(looked, DEFAULT_ADAPTATIONS, "stressed")[0].id).toBe("starter-save");
   });
 
   it("asks the AI for a gentle tone only after low energy or stress", () => {

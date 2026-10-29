@@ -1,0 +1,4244 @@
+[
+ {
+  "company": "GE Aerospace",
+  "state": "Querétaro",
+  "industry": "Aeroespacial y Defensa",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Aeroméxico",
+  "state": "Ciudad de México",
+  "industry": "Aerolíneas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "American Airlines",
+  "state": "Ciudad de México",
+  "industry": "Aerolíneas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Viva Aerobus",
+  "state": "Nuevo León",
+  "industry": "Aerolíneas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Cargill de México",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Coca - Cola FEMSA México",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Constellation Brands México",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Diageo",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "HEINEKEN México",
+  "state": "Nuevo León",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "Ingredion",
+  "state": "Jalisco",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Jugos del Valle - Santa Clara",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Kellanova",
+  "state": "Querétaro",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "MARS México",
+  "state": "Querétaro",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "McDonald´s",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Mezcal Amarás",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Moët Hennessy de México",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Mondelēz Snacking México",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Nestlé México",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "PepsiCo Alimentos México",
+  "state": "Ciudad de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Perfetti Van Melle",
+  "state": "Estado de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Griffith Foods",
+  "state": "Nuevo León",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 50,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   0
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Coca-Cola Mexico",
+  "state": "Estado de México",
+  "industry": "Alimentos, Bebidas y Comestibles",
+  "dei_mx_score": 40,
+  "criteria": [
+   0,
+   0,
+   20,
+   0,
+   20
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Intel México",
+  "state": "Jalisco",
+  "industry": "Científico",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Uber México",
+  "state": "Ciudad de México",
+  "industry": "Científico",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Thales México",
+  "state": "Morelos",
+  "industry": "Científico",
+  "dei_mx_score": 60,
+  "criteria": [
+   15,
+   15,
+   0,
+   20,
+   10
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "CISS",
+  "state": "Ciudad de México",
+  "industry": "Lucrativas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "GIZ México",
+  "state": "Ciudad de México",
+  "industry": "Lucrativas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "INE",
+  "state": "Ciudad de México",
+  "industry": "Lucrativas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "ALD Automotive",
+  "state": "Ciudad de México",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Bosch",
+  "state": "Ciudad de México",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Cummins México",
+  "state": "San Luis Potosí",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Daimler Buses México",
+  "state": "Ciudad de México",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Daimler Truck México",
+  "state": "Ciudad de México",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "General Motors",
+  "state": "Ciudad de México",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Grupo Volkswagen de México",
+  "state": "Puebla",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Harman de México",
+  "state": "Chihuahua",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Maxion Structural Components México",
+  "state": "Coahuila",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Michelin México",
+  "state": "Querétaro",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Nissan Mexicana & NR Finance Mexico",
+  "state": "Ciudad de México",
+  "industry": "Automotriz",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Bridgestone México",
+  "state": "Ciudad de México",
+  "industry": "Automotriz",
+  "dei_mx_score": 50,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   0
+  ],
+  "year2024": 50
+ },
+ {
+  "company": "American Express Company México",
+  "state": "Ciudad de México",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Banco Sabadell México",
+  "state": "Ciudad de México",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Banco Santander México",
+  "state": "Ciudad de México",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Bank of America Mexico",
+  "state": "Ciudad de México",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Banregio",
+  "state": "Nuevo León",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "BlackRock México",
+  "state": "Ciudad de México",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Buró de Crédito",
+  "state": "Ciudad de México",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Citibanamex",
+  "state": "Ciudad de México",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Edenred México",
+  "state": "Ciudad de México",
+  "industry": "Banca y Servicios Financieros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "GM Financial de México",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Go Bravo",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "HSBC GSC México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "HSBC México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Infonavit",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "J.P. Morgan",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "KUESKI",
+  "state": "Jalisco",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Mastercard",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "MSCI",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Muñoz C. y Asociados",
+  "state": "Guanajuato",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Nexu",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "PayPal México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Scotiabank México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Visa Mexico",
+  "state": "Estado de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Clip",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   10
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "Western Union",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   10
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Moody’s",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 60,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   10
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "albo",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 40,
+  "criteria": [
+   15,
+   15,
+   0,
+   0,
+   10
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Baker McKenzie",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "BASHAM Abogados",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Creel, García-Cuéllar, Aiza y Enríquez",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Greenberg Traurig",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Mijares, Angoitia, Cortés y Fuentes",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Santamarina y Steta",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Von Wobeser",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "SLLM",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 90,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   20
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Sánchez Devanny",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   10
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "B + F",
+  "state": "Ciudad de México",
+  "industry": "Bufetes de Abogados",
+  "dei_mx_score": 30,
+  "criteria": [
+   15,
+   15,
+   0,
+   0,
+   0
+  ],
+  "year2024": 30
+ },
+ {
+  "company": "Accenture",
+  "state": "Ciudad de México",
+  "industry": "Consultoría y Servicios a Empresa",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Atento México",
+  "state": "Ciudad de México",
+  "industry": "Consultoría y Servicios a Empresa",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Bain & Company Mexico",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "BCG – The Boston Consulting Group",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Brandsight México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "CAPSUS",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Chevez Ruiz Zamarripa",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Cognizant México",
+  "state": "Jalisco",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Conduent",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Dalberg Advisors",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 90
+ },
+ {
+  "company": "Edelman México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Eosis",
+  "state": "Jalisco",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "EPAM Systems",
+  "state": "Jalisco",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "ERM México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Experts Sustainability Consultants",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "EY Mexico",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Globant México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Grupo Adecco México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Grupo Magno Humano",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Kearney",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "KPMG",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "KTSA",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "ManpowerGroup",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Marsh McLennan México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "McKinsey & Company",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "NielsenIQ",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "Oxígeno Arquitectura",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Profesionales en Inventarios",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "PwC México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Randstad",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "S&P Global",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "SkyAlert",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "TATA Consultancy Services",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Teleperformance México",
+  "state": "Jalisco",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 396
+ },
+ {
+  "company": "Thomson Reuters México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Tsol",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 60
+ },
+ {
+  "company": "VML México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "WTW - Willis Towers Watson",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Brivé Soluciones",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   20
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Gensler Mexico",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   20
+  ],
+  "year2024": null
+ },
+ {
+  "company": "PageGroup Mexico",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 30,
+  "criteria": [
+   15,
+   15,
+   0,
+   0,
+   0
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "AMS",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 10,
+  "criteria": [
+   0,
+   0,
+   0,
+   0,
+   10
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "DHL Express México",
+  "state": "Ciudad de México",
+  "industry": "Correo y Entrega de Carga",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "DHL Supply Chain Mexico",
+  "state": "Estado de México",
+  "industry": "Correo y Entrega de Carga",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "FedEx México",
+  "state": "Ciudad de México",
+  "industry": "Correo y Entrega de Carga",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Nowports",
+  "state": "Ciudad de México",
+  "industry": "Correo y Entrega de Carga",
+  "dei_mx_score": 25,
+  "criteria": [
+   15,
+   0,
+   0,
+   0,
+   10
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Alcon",
+  "state": "Ciudad de México",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "BD",
+  "state": "Ciudad de México",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Genomma Lab Internacional",
+  "state": "Ciudad de México",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Grupo GAMI",
+  "state": "Baja California",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 50
+ },
+ {
+  "company": "Johnson & Johnson México",
+  "state": "Ciudad de México",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Maypo/Stendhal/Farmacias Vida",
+  "state": "Ciudad de México",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Medtronic México",
+  "state": "Ciudad de México",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Haleon",
+  "state": "Ciudad de México",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   20
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Teleflex",
+  "state": "Ciudad de México",
+  "industry": "Cuidado de la Salud",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   20
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Embajada Británica en México",
+  "state": "Ciudad de México",
+  "industry": "Diversos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Path Logistic",
+  "state": "Estado de México",
+  "industry": "Diversos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Gayosso",
+  "state": "Ciudad de México",
+  "industry": "Diversos",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   30
+  ],
+  "year2024": 50
+ },
+ {
+  "company": "Honeywell",
+  "state": "Ciudad de México",
+  "industry": "Diversos",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "CVA",
+  "state": "Jalisco",
+  "industry": "Diversos",
+  "dei_mx_score": 60,
+  "criteria": [
+   15,
+   15,
+   0,
+   0,
+   30
+  ],
+  "year2024": 20
+ },
+ {
+  "company": "Grupo Gigante",
+  "state": "Ciudad de México",
+  "industry": "Diversos",
+  "dei_mx_score": 55,
+  "criteria": [
+   15,
+   0,
+   20,
+   0,
+   20
+  ],
+  "year2024": 143
+ },
+ {
+  "company": "Condé Nast México y Latinoamérica",
+  "state": "Ciudad de México",
+  "industry": "Editoriales e Imprentas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Penguin Random House",
+  "state": "Ciudad de México",
+  "industry": "Editoriales e Imprentas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Enel México",
+  "state": "Ciudad de México",
+  "industry": "Energía y Servicios Públicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 60
+ },
+ {
+  "company": "Iberdrola México",
+  "state": "Ciudad de México",
+  "industry": "Energía y Servicios Públicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Sempra Infraestructura",
+  "state": "Ciudad de México",
+  "industry": "Energía y Servicios Públicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Siemens Energy",
+  "state": "Ciudad de México",
+  "industry": "Energía y Servicios Públicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "Cinépolis",
+  "state": "Michoacán",
+  "industry": "Entretenimiento y Medios Electrónicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 85
+ },
+ {
+  "company": "Sony Music Entertainment México",
+  "state": "Ciudad de México",
+  "industry": "Entretenimiento y Medios Electrónicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "The Walt Disney Company México",
+  "state": "Ciudad de México",
+  "industry": "Entretenimiento y Medios Electrónicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Warner Bros. Discovery",
+  "state": "Ciudad de México",
+  "industry": "Entretenimiento y Medios Electrónicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Warner Music México",
+  "state": "Ciudad de México",
+  "industry": "Entretenimiento y Medios Electrónicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "HP Inc.",
+  "state": "Ciudad de México",
+  "industry": "Equipo informático y de Oficina",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Lexmark México",
+  "state": "Ciudad de México",
+  "industry": "Soporte en Impresión",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Steelcase México",
+  "state": "Nuevo León",
+  "industry": "Soporte en Impresión",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "3M México y Maquilas",
+  "state": "Ciudad de México",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "ABB",
+  "state": "San Luis Potosí",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 252
+ },
+ {
+  "company": "ADM",
+  "state": "Ciudad de México",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Avery Dennison",
+  "state": "Querétaro",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Carrier",
+  "state": "Nuevo León",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Caterpillar Nuevo Laredo",
+  "state": "Tamaulipas",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Colgate Palmolive",
+  "state": "Ciudad de México",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Corteva Agriscience",
+  "state": "Jalisco",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Eaton",
+  "state": "Ciudad de México",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Flex México",
+  "state": "Jalisco",
+  "industry": "Fabricación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Fluidra",
+  "state": "Baja California",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "GE Vernova Mexico",
+  "state": "Querétaro",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Jabil Guadalajara",
+  "state": "Jalisco",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Maxion Wheels",
+  "state": "Chihuahua",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Metalsa",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 85
+ },
+ {
+  "company": "Reckitt",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Salud Integral SW",
+  "state": "Estado de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Schneider Electric",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Siemens",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Thermometrics México",
+  "state": "Baja California",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Trane",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Wabtec",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 398
+ },
+ {
+  "company": "Whirlpool Corporation",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Xylem Mexico",
+  "state": "Querétaro",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "Herman Miller México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 90,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   20
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "AbbVie México",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Amgen",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "AstraZeneca",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Bayer de México",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Bristol Myers Squibb de México",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Gilead",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "MSD",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Novartis México",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Organon",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Pfizer",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Sanofi México",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Servier Mexico",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Siegfried Rhein",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Bausch Health México",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   20
+  ],
+  "year2024": 405
+ },
+ {
+  "company": "Novo Nordisk",
+  "state": "Ciudad de México",
+  "industry": "Farmacéutica",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   0
+  ],
+  "year2024": 365
+ },
+ {
+  "company": "Teva Pharma México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   20
+  ],
+  "year2024": 75
+ },
+ {
+  "company": "Grupo Grisi",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 10,
+  "criteria": [
+   0,
+   0,
+   0,
+   0,
+   10
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Maritime Procurement Services",
+  "state": "Ciudad de México",
+  "industry": "Gestión de Residuos",
+  "dei_mx_score": 20,
+  "criteria": [
+   0,
+   0,
+   0,
+   0,
+   20
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Almar Group",
+  "state": "Jalisco",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "CEC Mexico City",
+  "state": "Ciudad de México",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Hyatt Regency Mérida",
+  "state": "Yucatán",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Hyatt Regency Mexico City",
+  "state": "Ciudad de México",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "IHG Hotels & Resorts",
+  "state": "Jalisco",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Marriott International",
+  "state": "Ciudad de México",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Minor Hotels",
+  "state": "Ciudad de México",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Pueblo Bonito Beyond Hospitality",
+  "state": "Baja California Sur",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Viceroy Los Cabos",
+  "state": "Baja California Sur",
+  "industry": "Budget, Novotel",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Cemex México",
+  "state": "Nuevo León",
+  "industry": "Ingeniería y Construcción",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "Hilti",
+  "state": "Ciudad de México",
+  "industry": "Ingeniería y Construcción",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Holcim Mexico",
+  "state": "Ciudad de México",
+  "industry": "Ingeniería y Construcción",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "CBRE México",
+  "state": "Ciudad de México",
+  "industry": "Inmobiliaria, Comercial",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Cushman & Wakefield",
+  "state": "Ciudad de México",
+  "industry": "Inmobiliaria, Comercial",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Fibra Uno",
+  "state": "Ciudad de México",
+  "industry": "Inmobiliaria, Comercial",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Público Coworking",
+  "state": "Ciudad de México",
+  "industry": "Inmobiliaria, Comercial",
+  "dei_mx_score": 60,
+  "criteria": [
+   15,
+   15,
+   0,
+   0,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Hospital San Agustín",
+  "state": "Zacatecas",
+  "industry": "Instalaciones Médicas para la Salud",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Syneos Health",
+  "state": "Estado de México",
+  "industry": "Instalaciones Médicas para la Salud",
+  "dei_mx_score": 30,
+  "criteria": [
+   15,
+   15,
+   0,
+   0,
+   0
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Ternium",
+  "state": "Nuevo León",
+  "industry": "Minería y Metales",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Mattel de México",
+  "state": "Ciudad de México",
+  "industry": "Minoristas y Productos de Consumo",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "P&G México",
+  "state": "Estado de México",
+  "industry": "Minoristas y Productos de Consumo",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "SC Johnson",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Sephora México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "The Home Depot México",
+  "state": "Nuevo León",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Unilever de México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Walmart de México y Centroamérica",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Inditex",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   10
+  ],
+  "year2024": 70
+ },
+ {
+  "company": "Baker Hughes México",
+  "state": "Ciudad de México",
+  "industry": "Petróleo y Gas",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Shell México",
+  "state": "Ciudad de México",
+  "industry": "Petróleo y Gas",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   10
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Smurfit Westrock",
+  "state": "Ciudad de México",
+  "industry": "Productos de Papel y Bosque",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Proteak",
+  "state": "Ciudad de México",
+  "industry": "Productos de Papel y Bosque",
+  "dei_mx_score": 60,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   10
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Amdocs",
+  "state": "Jalisco",
+  "industry": "Programas de Cómputo",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Encora",
+  "state": "Sonora",
+  "industry": "Programas de Cómputo",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Salesforce",
+  "state": "Ciudad de México",
+  "industry": "Programas de Cómputo",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Rappi",
+  "state": "Ciudad de México",
+  "industry": "Programas de Cómputo",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   20
+  ],
+  "year2024": null
+ },
+ {
+  "company": "another",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "BBDO México",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "DDB México",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Eureka",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "GroupM México",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Grupo Terán",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Havas Group México",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Hogarth México",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "IPG Mediabrands",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Jellyfish México",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "L LYC",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Madison",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "McCann Worldgroup",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Media Marketing Knowledge Group",
+  "state": "Ciudad de México",
+  "industry": "Publicidad y Mercadotecnia",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Nameless Global",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Ogilvy",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Omnicom Media Group México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 40
+ },
+ {
+  "company": "Porter Novelli",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "TAO Publicidad & Eventos®",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "GIDEAS",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   10
+  ],
+  "year2024": 50
+ },
+ {
+  "company": "Ecolab",
+  "state": "Ciudad de México",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Givaudan",
+  "state": "Morelos",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Henkel",
+  "state": "Estado de México",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 65
+ },
+ {
+  "company": "Lubrizol de México Comercial",
+  "state": "Ciudad de México",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Qiagen México",
+  "state": "Ciudad de México",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 60
+ },
+ {
+  "company": "Syngenta",
+  "state": "Ciudad de México",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Univar Solutions",
+  "state": "Ciudad de México",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "BASF Mexicana",
+  "state": "Ciudad de México",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 90,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   20
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Dow Química Mexicana",
+  "state": "Ciudad de México",
+  "industry": "Química y Biotecnología",
+  "dei_mx_score": 10,
+  "criteria": [
+   0,
+   0,
+   0,
+   0,
+   10
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Adidas de México",
+  "state": "Ciudad de México",
+  "industry": "Ropa, Moda, Textiles, Tiendas Depar-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": null
+ },
+ {
+  "company": "Axo®",
+  "state": "Estado de México",
+  "industry": "Ropa, Moda, Textiles, Tiendas Depar-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "El Palacio de Hierro",
+  "state": "Ciudad de México",
+  "industry": "Ropa, Moda, Textiles, Tiendas Depar-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "H&M",
+  "state": "Ciudad de México",
+  "industry": "Ropa, Moda, Textiles, Tiendas Depar-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 329
+ },
+ {
+  "company": "Nike de México",
+  "state": "Jalisco",
+  "industry": "Ropa, Moda, Textiles, Tiendas Depar-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Allianz Partners",
+  "state": "Ciudad de México",
+  "industry": "Seguros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Cardif",
+  "state": "Ciudad de México",
+  "industry": "Seguros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Chubb Seguros México",
+  "state": "Ciudad de México",
+  "industry": "Seguros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "MetLife México",
+  "state": "Ciudad de México",
+  "industry": "Seguros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Seguros Monterrey New York Life",
+  "state": "Ciudad de México",
+  "industry": "Seguros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Swiss Re",
+  "state": "Ciudad de México",
+  "industry": "Seguros",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Sodexo México",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Alimentación y Manten-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Capgemini México",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Google Mexico",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "IBM México",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 60
+ },
+ {
+  "company": "Improving México",
+  "state": "Jalisco",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Microsoft",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 70
+ },
+ {
+  "company": "NTT DATA Services Mexico",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Oracle",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "SAP México",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Softtek",
+  "state": "Nuevo León",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Wizeline",
+  "state": "Jalisco",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "DELL México",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 90,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   20
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "STEFANINI México",
+  "state": "Ciudad de México",
+  "industry": "Servicios de Cómputo, de Almace-",
+  "dei_mx_score": 90,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   20
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Amazon México",
+  "state": "Ciudad de México",
+  "industry": "Menor",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Grupo LEGO",
+  "state": "Nuevo León",
+  "industry": "Menor",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Kavak",
+  "state": "Ciudad de México",
+  "industry": "Menor",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "British American Tobacco México",
+  "state": "Nuevo León",
+  "industry": "Tabaco",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Philip Morris México",
+  "state": "Ciudad de México",
+  "industry": "Tabaco",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "AT&T México",
+  "state": "Ciudad de México",
+  "industry": "Telecomunicaciones",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Cisco",
+  "state": "Ciudad de México",
+  "industry": "Telecomunicaciones",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "HAZ",
+  "state": "Jalisco",
+  "industry": "Telecomunicaciones",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "IFT",
+  "state": "Ciudad de México",
+  "industry": "Telecomunicaciones",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Nokia México",
+  "state": "Estado de México",
+  "industry": "Telecomunicaciones",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 90
+ },
+ {
+  "company": "STO Contact Center",
+  "state": "Jalisco",
+  "industry": "Telecomunicaciones",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Pentafon",
+  "state": "Ciudad de México",
+  "industry": "Telecomunicaciones",
+  "dei_mx_score": 90,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   20
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Cirion Technologies Mexico",
+  "state": "Ciudad de México",
+  "industry": "Telecomunicaciones",
+  "dei_mx_score": 50,
+  "criteria": [
+   0,
+   0,
+   20,
+   0,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "Alger viajes",
+  "state": "Estado de México",
+  "industry": "Transportación y Viajes",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 70
+ },
+ {
+  "company": "Schneider National de México",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "T&C Group",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 80
+ },
+ {
+  "company": "Maritimex",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 90,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   20
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Practitravel",
+  "state": "Estado de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 80,
+  "criteria": [
+   15,
+   15,
+   20,
+   0,
+   30
+  ],
+  "year2024": 100
+ },
+ {
+  "company": "Kuehne + Nagel",
+  "state": "Ciudad de México",
+  "industry": "Ubicación",
+  "dei_mx_score": 70,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   0
+  ],
+  "year2024": 425
+ },
+ {
+  "company": "Tecnológico de Monterrey",
+  "state": "Nuevo León",
+  "industry": "Tecnológicos",
+  "dei_mx_score": 100,
+  "criteria": [
+   15,
+   15,
+   20,
+   20,
+   30
+  ],
+  "year2024": 100
+ }
+]

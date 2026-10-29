@@ -1,4 +1,4 @@
-# Python
+﻿# Python
 __pycache__/
 *.pyc
 .venv/
@@ -11,22 +11,10 @@ env/
 .env.*
 !.env.example
 
-# Data (regenerable / pesado, no subir)
-*.json
-!jobs_test.json
-!config/neurodivergence_job_barriers.json
-!data/raw/jobs/jobs_usa_full_backup_cleaned.json
-*.jsonl
-*.npy
-*.npz
-*.csv
-*.parquet
-*.sqlite
-*.sqlite3
-*.db
-data/processed/
+# Data files shipped with the backend. Oversized Glassdoor exports stay out of GitHub.
+data/raw/glassdoor/current/all_reviews.csv
+data/raw/glassdoor/legacy/glassdoor_reviews.csv
 *.ipynb_checkpoints/
-
 # Keep the OpenAI filter; ignore the legacy local-model filter.
 /filter_jobs.py
 

@@ -6,6 +6,7 @@ import { Check } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Constellation } from "@/components/profile/constellation";
 import { QUESTIONS, type Answers, describeAdaptations, toAdaptations } from "@/lib/profile";
+import { applyPrefs, loadPrefs, savePrefs } from "@/lib/personalization";
 import { setReadingOption } from "@/lib/reading";
 
 // Shown up front; the rest sit behind "more" so the summary stays one screen of reading.
@@ -58,7 +59,7 @@ export function ProfileSummary({ answers, onEdit }: { answers: Answers; onEdit: 
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg bg-secondary p-4">
             <p className="text-sm">
               {aidsOn
-                ? "The dyslexia-friendly font and larger text are on. Change them in Reading at the top."
+                ? "The dyslexia-friendly font and larger text are on. Change them in Personalize at the top."
                 : "Long texts feel hard. Want the dyslexia-friendly font and larger text?"}
             </p>
             {!aidsOn && (
@@ -67,7 +68,9 @@ export function ProfileSummary({ answers, onEdit }: { answers: Answers; onEdit: 
                 className={action}
                 onClick={() => {
                   setReadingOption("dyslexic", true);
-                  setReadingOption("text-large", true);
+                  const prefs = { ...loadPrefs(), font: "dyslexic" as const, size: 120 };
+                  applyPrefs(prefs);
+                  savePrefs(prefs);
                   setAidsOn(true);
                 }}
               >

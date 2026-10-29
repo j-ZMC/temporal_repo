@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BriefcaseBusiness, ListChecks, MessagesSquare, Star, UserRound } from "lucide-react";
-import { AccessibilityPanel } from "@/components/accessibility-panel";
+import { PersonalizationPanel } from "@/components/personalization-panel";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -28,8 +28,8 @@ export function SiteNav() {
           active ? "bg-secondary font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"
         )}
       >
-        <Icon className="size-5" aria-hidden />
-        {label}
+        <Icon className="size-5" aria-hidden data-pz-icon />
+        <span data-pz-label>{label}</span>
       </Link>
     );
   });
@@ -45,7 +45,7 @@ export function SiteNav() {
           <nav aria-label="Main" className="hidden gap-1 lg:flex">
             {items}
           </nav>
-          <AccessibilityPanel />
+          <PersonalizationPanel />
         </div>
       </header>
       {/* On phones and tablets the nav sits at the bottom, within thumb reach; lg leaves room for large text */}

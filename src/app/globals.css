@@ -209,3 +209,57 @@
     transition: none !important;
   }
 }
+
+/* Personalization (src/lib/personalization.ts). Every rule needs a data-pz* attribute or .focus-strong on <html>,
+   so with default settings none of this applies and the app looks unchanged. */
+html[data-pz~="font"],
+html[data-pz~="font"] * {
+  font-family: var(--pz-font);
+}
+html[data-pz~="size"] {
+  font-size: calc(var(--pz-size) * 1%);
+}
+html[data-pz~="lh"] body * {
+  line-height: var(--pz-lh);
+}
+html[data-pz~="ls"] body {
+  letter-spacing: var(--pz-ls);
+}
+html[data-pz~="w"] :is(p, li) {
+  max-width: var(--pz-w);
+}
+html[data-pz~="cur"],
+html[data-pz~="cur"] * {
+  cursor: var(--pz-cursor);
+}
+html[data-pz~="icon"] :is(button, a) > svg {
+  width: var(--pz-icon);
+  height: var(--pz-icon);
+}
+html[data-pz~="ctl"] :is(button, select, textarea, input:not([type="checkbox"], [type="radio"], [type="range"], [type="color"])) {
+  min-height: var(--pz-ctl);
+}
+/* Icons only: labels stay available to screen readers */
+html[data-pz-icons="icons"] [data-pz-label] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+html[data-pz-icons="text"] [data-pz-icon] {
+  display: none;
+}
+/* Content opts in with data-detail="extra" (hidden when reduced) or "full" (only in the full view) */
+html[data-pz-detail="reduced"] [data-detail] {
+  display: none;
+}
+html[data-pz-detail="comfortable"] [data-detail="full"] {
+  display: none;
+}
+html.focus-strong :focus-visible {
+  outline: 4px solid var(--foreground);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 7px var(--star);
+}

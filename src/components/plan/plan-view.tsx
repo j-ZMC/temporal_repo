@@ -136,7 +136,9 @@ function View() {
         />
         <p className="text-muted-foreground">
           {done} of {plan.steps.length} steps done.{" "}
-          <span className="text-sm">Tap a star to see a step.</span>
+          <span data-detail="extra" className="text-sm">
+            Tap a star to see a step.
+          </span>
         </p>
         {!profile && (
           <p className="text-sm text-muted-foreground">

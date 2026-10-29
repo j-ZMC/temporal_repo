@@ -84,7 +84,11 @@ export function CurrentStep({
       {selfDone ? (
         <p className="text-muted-foreground">This step is done by itself when you finish your profile.</p>
       ) : (
-        breakdownFirst && <p className="text-muted-foreground">This is a big step. You can break it down first.</p>
+        breakdownFirst && (
+          <p data-detail="extra" className="text-muted-foreground">
+            This is a big step. You can break it down first.
+          </p>
+        )
       )}
       {/* Same order on every step: go do it, mark it done, or make it smaller. */}
       <div className="flex flex-wrap gap-3">

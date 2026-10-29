@@ -24,3 +24,7 @@ data/raw/glassdoor/legacy/glassdoor_reviews.csv
 Thumbs.db
 
 01_test.ipynb
+
+# Exclude CSV and PDF datasets from backend data.
+data/**/*.csv
+data/**/*.pdf
